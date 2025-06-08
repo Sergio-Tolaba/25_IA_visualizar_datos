@@ -791,3 +791,371 @@ Proyecto del aula anterior
 
 Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
 ***************************************************************************************************
+02
+Composición de datos estáticos
+¡Hola! En esta clase, exploramos los gráficos de composición para datos estáticos, es decir, datos que no cambian con el tiempo.
+
+Puntos clave:
+
+Gráficos de Composición Estáticos: Se utilizan para visualizar la proporción de diferentes categorías en un conjunto de datos en un momento específico.
+Ejemplo Práctico: Se analizó la proporción de usuarios que participan en un programa de cashback utilizando un gráfico de torta (o pie chart).
+Implementación en Python: Se mostró cómo crear un gráfico de torta utilizando las bibliotecas matplotlib para visualizar la proporción de usuarios participantes.
+Personalización: Se explicó cómo personalizar el gráfico, cambiando los colores y el tipo de gráfico (de torta a rosquilla).
+Uso Adecuado: Los gráficos de torta son ideales para datos con pocas categorías, especialmente datos dicotómicos (sí/no, verdadero/falso).
+¿Te gustaría que profundicemos en algún aspecto en particular o tienes alguna pregunta?
+//////////////////////////////////////////////////////////////////////////////////////////////
+03
+¿Cuál es el prompt ideal?
+ Siguiente pregunta
+
+Juan continuó trabajando con la base que contenía los datos sobre el PIB y los Valores Agregados de Bienes y Servicios de Brasil entre los años 2002 y 2020.
+
+En una de las agregaciones que realizó, Juan creó la siguiente tabla que representa el Valor Agregado Total (sin Agropecuaria) y el Valor Agregado en Agropecuaria en 2020:
+
+Tipo	Valor
+0	VA Total sin Agropecuaria	6.594937e+12
+1	VA Agropecuaria	4.346210e+11
+Juan quisiera crear un visual que muestre la proporción que el sector Agropecuario tiene sobre el Valor Agregado Total en 2020.
+
+Con base en lo que hemos aprendido a lo largo de las clases, ¿cuál de los siguientes prompts sería adecuado para la generación del visual deseado por Juan?
+
+Alternativa incorreta
+Tenemos un DataFrame llamado "df" y queremos construir un gráfico de barras que muestre la proporción del VA de Agropecuaria en relación al Valor Agregado Total. Tenemos 2 columnas en nuestros datos, "Tipo" con el tipo de dato que vamos a presentar y "Valor" con los valores de valor agregado total (sin agropecuaria) y de agropecuaria en 2020. Utilice las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Alternativa incorreta
+Tenemos un DataFrame llamado "df" y queremos construir un visual de pizza que muestre la proporción del VA de Agropecuaria en relación al Valor Agregado Total. Los datos estarán en diferentes porciones. Utilice las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Alternativa incorreta
+Tenemos un DataFrame llamado "df" y queremos construir un visual de pizza que muestre la proporción del VA de Agropecuaria en relación al Valor Agregado Total. Tenemos 2 columnas en nuestros datos, "Tipo" con el tipo de dato que vamos a presentar y "Valor" con los valores de valor agregado total (sin agropecuaria) y de agropecuaria en 2020. Utilice las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Este es el prompt ideal, ya que especifica todos los procesos necesarios para alcanzar el comportamiento deseado, solicitando la generación de un código para el visual con los datos de agropecuaria y valor agregado total.
+
+Alternativa incorreta
+Tenemos un DataFrame llamado "df" y queremos construir un gráfico de línea que muestre la proporción del VA de Agropecuaria en relación al Valor Agregado Total. Tenemos 2 columnas en nuestros datos, "Tipo" con el tipo de dato que vamos a presentar y "Valor" con los valores de valor agregado total (sin agropecuaria) y de agropecuaria en 2020. Utilice las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+¡Enhorabuena, has acertado!
+ Discutir en el Foro
+********************************************************************************************
+04
+Distribución de datos
+¡Hola! En esta clase, aprendimos sobre los gráficos de distribución, que son útiles para mostrar cómo se distribuyen los datos. Nos enfocamos en cómo usar un histograma para visualizar la distribución de las calificaciones de las compras en ZOOP.
+
+Aquí están los puntos clave:
+
+Gráficos de Distribución: Ayudan a entender la distribución de los datos para el storytelling en informes.
+
+Ejemplo Práctico: Usamos un dataframe llamado df con una columna nota (calificaciones de 0 a 10) para crear un histograma.
+
+ChatGPT: No necesitamos especificar que queríamos un histograma; ChatGPT lo sugirió automáticamente al hablar de distribución.
+
+Código:
+
+python
+Copiar código
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(10, 6))
+sns.histplot(DF['nota'], bins=10, kde=False, color='skyblue')
+plt.title('Distribución de las calificaciones de las compras')
+plt.xlabel('Calificación (0 a 10)')
+plt.ylabel('Frecuencia')
+plt.show()
+Interpretación: El histograma mostró que las calificaciones más frecuentes estaban entre 8 y 10, indicando buenos números en general.
+
+Tarea: Se propuso cambiar la columna nota por edad en el prompt para ver cómo cambia el gráfico.
+
+Espero que este resumen te sea útil. ¡No dudes en preguntar si tienes más preguntas!
+****************************************************************************************
+05
+Para saber más: histogramas y gráficos de densidad
+ Siguiente pregunta
+
+En el video anterior, creamos un prompt que generó el código de un gráfico de distribución de acuerdo con las orientaciones que proporcionamos sobre nuestros datos. Aunque no especificamos el tipo de visualización, la IA determinó que el gráfico a generar sería un histograma de columnas.
+
+Fue posible notar que el código generado por ChatGPT produjo una visualización muy adecuada para presentar la distribución de la muestra de datos que poseemos, donde cada columna representaba la frecuencia de repetición de un valor. Pero, ¿por qué ChatGPT no eligió, por ejemplo, un gráfico de densidad? ¿Cómo saber cuándo utilizar uno u otro?
+
+Vamos a utilizar el propio ChatGPT para responder estas dudas.
+
+Prompt: Estoy trabajando con la generación de visuales utilizando el Lenguaje Python y noté que uno de los gráficos generados fue un histograma de columna. Sin embargo, sé que también existe una forma de crear visualizaciones como un gráfico de densidad.
+
+Explique por qué ChatGPT eligió presentar los datos de evaluaciones del público (valores enteros de 0 a 10) como un histograma de columna y no un gráfico de densidad. ¿Cuál es la diferencia entre estos dos visuales y cuándo podemos elegir uno u otro? Traiga ejemplos simples de la utilización de un histograma y un gráfico de densidad, en un contexto de e-commerce.
+
+La respuesta dada por ChatGPT es la siguiente:
+
+La elección entre un histograma de columnas (también conocido como histograma de barras) y un gráfico de densidad generalmente depende del tipo de datos que se analizan y del objetivo de la visualización.
+
+¿Por qué un histograma de columnas?
+
+El histograma de columnas se utiliza ampliamente para visualizar la distribución de frecuencias o conteos en un conjunto de datos. Este tipo de gráfico es particularmente eficaz para mostrar la distribución de variables discretas o categorías. En el caso de las evaluaciones del público, que son valores enteros de 0 a 10, un histograma de columnas permite visualizar claramente cuántas evaluaciones se recibieron para cada punto específico. Esto facilita la identificación de tendencias, como la concentración de evaluaciones en ciertas puntuaciones, y ayuda a comprender la distribución general de las evaluaciones.
+
+Diferencia entre un Histograma de Columnas y un Gráfico de Densidad
+
+Histograma de Columnas: Utiliza barras verticales para representar la frecuencia de cada categoría o intervalo de valores. La altura de cada barra indica el conteo o la proporción de observaciones en esa categoría.
+Gráfico de Densidad: Utiliza una línea para trazar la distribución continua de los datos. Este tipo de gráfico es más adecuado para variables continuas, donde muestra la probabilidad de valores dentro de un continuo, proporcionando una idea de la densidad de los datos.
+¿Cuándo elegir cada uno?
+
+Histograma de Columnas: Es ideal para datos categóricos o discretos, cuando se desea visualizar la frecuencia o el conteo por categoría. Es útil cuando las categorías son pocas y están claramente definidas, como las calificaciones de 0 a 10.
+Gráfico de Densidad: Es más adecuado para variables continuas, cuando se desea entender la distribución y densidad de los datos a lo largo de un intervalo. Es útil para visualizar la forma de la distribución de los datos, como una distribución normal, binomial, etc.
+Ejemplos de Utilización en E-commerce
+
+Histograma de Columnas: Imagina que deseas analizar las evaluaciones de los clientes para un producto específico en tu e-commerce. Las evaluaciones van de 0 a 5. Un histograma de columnas puede mostrar cuántos clientes dieron cada puntuación, permitiendo identificar rápidamente la satisfacción general de los clientes con el producto.
+
+Gráfico de Densidad: Si estás analizando el tiempo que los clientes pasan en tu sitio de e-commerce antes de realizar una compra, los datos serían más continuos (por ejemplo, minutos). Un gráfico de densidad podría mostrar la distribución del tiempo de navegación, ayudando a identificar si la mayoría de los clientes compra rápidamente o pasa mucho tiempo navegando antes de decidir.
+
+¿Qué opinas de la respuesta de ChatGPT?
+
+Lo importante es darse cuenta de que nos brindó una buena explicación sobre la diferencia entre ambos gráficos y hasta señaló ejemplos en los que podríamos elegir entre uno u otro dependiendo de la naturaleza de nuestros datos.
+
+ Discutir en el Foro
+************************************************************************
+06
+Otros gráficos de distribución
+¡Hola! En esta clase, aprendimos a usar ChatGPT para crear gráficos de distribución que nos ayuden a entender mejor a nuestra audiencia.
+
+Aquí tienes un resumen de los puntos clave:
+
+Pregunta de negocio: Queremos saber cómo se distribuye nuestra audiencia por edad y sexo biológico, y si hay algún grupo que destaque.
+Gráfico de violín: ChatGPT nos sugirió este gráfico, que combina histograma, KDE y boxplot. Aunque es útil, puede ser difícil de leer.
+BoxPlot: Cambiamos a un BoxPlot porque ofrece una visión más clara de la distribución de los datos, mostrando los valores mínimo, primer cuartil, mediana, tercer cuartil y máximo.
+Interpretación: Con el BoxPlot, pudimos observar mejor la distribución de nuestros datos por edad y sexo biológico, identificando valores clave y outliers.
+En resumen, aprendimos a usar ChatGPT para generar visualizaciones que nos ayuden a responder preguntas de negocio, y cómo elegir el tipo de gráfico adecuado para cada situación.
+
+¿Hay algo más en lo que te pueda ayudar o alguna duda que tengas sobre la clase?
+//////////////////////////////////////////////////////////////////////////////////////////////////
+07
+¿Cuál gráfico elegir?
+ Siguiente pregunta
+
+Serenatto - Café & Bistró está evaluando algunos de los platos que tiene en su menú para crear una oferta especial de almuerzo. Uno de los platos seleccionados para la oferta especial, en el periodo de 12:00 a 14:00 horas, fue el "Risotto de Funghi" y "Limoncello".
+
+Sabiendo esto, la analista de datos, Daniela, decidió evaluar el comportamiento de compra de los(as) clientes para estos productos, verificando si realmente tienen éxito dentro del periodo deseado para el especial de almuerzo. Ella creó el siguiente prompt para generar una visualización que acompañe esos datos:
+
+Prompt: Tenemos un DataFrame llamado "df_serenatto" y queremos construir un _______ que muestre la distribución de los productos "Risotto de Funghi" y "Limoncello" según las horas de venta.
+
+En "df_serenatto", tenemos la columna “producto” con el tipo de producto, en la que solo utilizaremos "Risotto de Funghi" y "Limoncello", y la columna "horario" con los horarios de venta de los productos en horas y minutos. Queremos crear una visualización que muestre la distribución de estos datos.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+Como puedes notar, no especificamos el tipo de visualización que será construida con el código generado por ChatGPT. Basado en lo que hemos aprendido hasta ahora, ¿qué visualizaciones pueden elegirse para representar los datos de los productos en relación con la hora de consumo?
+
+Alternativa correta
+Gráfico de pastel.
+
+
+Alternativa correta
+Boxplot.
+
+
+Este es uno de los tipos de visualizaciones que pueden ser elegidos. Las horas pueden dividirse en intervalos iguales y los datos presentados sobre esta organización varían de acuerdo con la frecuencia de consumo.
+
+Alternativa correta
+Gráfico de barras verticales.
+
+
+Alternativa correta
+Histograma de columnas.
+
+
+Este es uno de los tipos de visualizaciones que pueden ser elegidos. Las horas pueden dividirse en intervalos iguales y los datos presentados sobre esta organización varían de acuerdo con la frecuencia de consumo. Un gráfico de densidad también podría ser utilizado.
+
+*****************************************************************************
+08
+Para saber más: tipos de gráficos==>> ver 25_IA_visualizar_datos....docx
+ Siguiente pregunta
+
+Hemos revisado todos los visuales que refinaremos a partir de la próxima lección para la creación del informe con los datos de Zoop. Podemos practicar la generación de códigos para una serie de gráficos y comprender durante la lección un poco sobre cada uno de ellos.
+
+En esta actividad, te traigo un resumen de algunos de los principales visuales utilizados en el día a día, algunas buenas prácticas y para qué son utilizados. La elección del tipo de gráfico adecuado tiene en cuenta el tipo de dato, la organización y el objetivo que tenemos en cada análisis. ¿Vamos a entender qué gráficos son más adecuados dependiendo del contexto y de la información deseada?
+
+Gráfico de columnas y barras horizontales
+Un gráfico de columnas es ideal para la representación de valores numéricos de una o más categorías de datos, sean discretas o de intervalos definidos. Facilita una comparación rápida y directa entre diferentes categorías, siendo uno de los gráficos más utilizados en informes y presentaciones. El ejemplo a continuación demuestra este comportamiento:
+
+5.png
+
+El gráfico de barras horizontales es ideal cuando queremos presentar las categorías a la izquierda de forma horizontal, siendo la forma más fluida de leer textos que puedan ser extensos. El enfoque de este tipo de gráfico está primero en la categoría de los datos y, en segundo lugar, en los valores numéricos.
+
+6.png
+
+Gráfico de columnas agrupadas y columnas apiladas
+Un gráfico de columnas o barras agrupadas es ideal cuando queremos comparar diferentes categorías respecto a una variable, mostrando cómo los valores se comparan dentro de cada categoría (en el ejemplo, los trimestres) en columnas separadas (en el ejemplo, productos E, D y F) y entre los diferentes grupos, facilitando la visualización de patrones y diferencias entre ellos.
+
+7.png
+
+Un gráfico de columnas o barras apiladas es útil cuando queremos añadir a la comparación entre periodos o categorías, la comparación dentro de cada una. Este tipo de gráfico permite observar la composición de cada columna según la variable deseada (por ejemplo, las preferencias de consumo de café o té).
+
+8.png
+
+Gráfico de línea
+Los gráficos de línea son ideales para representar tendencias a lo largo del tiempo o una secuencia ordenada. Cuando se tiene una gran cantidad de periodos, vale la pena usar gráficos de líneas para representar series temporales.
+
+9.png
+
+Los gráficos de líneas añaden una variable categórica a los análisis, permitiendo la comparación de series temporales en períodos de tiempo cortos o largos. En el ejemplo a continuación, observamos la facturación por región dividida por trimestres de un año cualquiera. Es posible comparar las facturaciones en cada región en diferentes momentos utilizando solo una visualización.
+
+10.png
+
+Gráfico de pastel y de dona
+El gráfico de pastel se usa para representar proporciones de diferentes categorías o partes de un todo. Es ideal para composiciones estáticas, ya sea por valores numéricos o porcentajes. Hay que tener cuidado de no usar más de 5 categorías o categorías con proporciones muy similares o muy dispares.
+
+11.png
+
+El gráfico de dona es una alternativa al gráfico de pastel, adecuado cuando queremos reducir la superficie colorida, pasando a utilizar coronas circulares. Ambos gráficos son ideales para pocas categorías de datos.
+
+12.png
+
+Gráfico de cascada
+Los gráficos de cascada se usan para visualizar ajustes incrementales a un valor inicial, lo que los hace ideales para ver flujos o fluctuaciones de valores numéricos a lo largo del tiempo.
+
+13.png
+
+Histograma
+Los histogramas se utilizan para observar la distribución de los datos en un intervalo dado. Estos intervalos, llamados "bins", muestran cuántas observaciones caen dentro de esa franja.
+
+14.png
+
+Gráfico de dispersión
+Los gráficos de dispersión se utilizan para representar la relación o distribución entre dos variables numéricas. Cada punto en el gráfico representa una combinación de coordenadas, facilitando la identificación de patrones, tendencias y correlaciones importantes para el aprendizaje automático.
+
+15.png
+
+*********************************************************************+
+09
+Desafío: perfil de los clientes
+ Siguiente pregunta
+
+Volviendo a nuestro proyecto de Manos a la Obra, logramos generar dos visualizaciones más con los datos de nuestros desafíos.
+
+¿Ahora, vamos a crear otros visuales enfocados en el perfil de nuestros clientes?
+
+Has recibido una nueva solicitud de Zoop para generar 2 visuales, siendo uno de ellos relacionado al registro de clientes para un nuevo servicio que Zoop implementará, el Zoop Pay, y el otro sobre las evaluaciones de los clientes en relación con su ubicación. Observemos las dos situaciones y construyamos con la ayuda de ChatGPT los dos gráficos solicitados:
+
+Desafío 1:
+
+Zoop está en proceso de lanzamiento de su billetera digital, que brindará acceso a una serie de beneficios para sus clientes, y le gustaría saber cuál es el porcentaje de personas que ya están pre-registradas para este producto. El e-commerce busca comprender este número para definir la necesidad de promoción y esfuerzo para atraer más clientes a esta funcionalidad.
+
+Construye y ejecuta un prompt en ChatGPT para generar, a partir de nuestra base de datos, un visual que presente la proporción de personas pre-registradas en Zoop Pay.
+
+Desafío 2:
+
+Zoop quiere analizar la distribución de las edades de los clientes por región con el fin de delinear una "persona" (perfil) de su clientela en diferentes localidades del país, y para ello, solicitó un visual que distribuya estos datos. Construye y ejecuta un prompt en ChatGPT para generar, a partir de nuestra base de datos, un visual que muestre la distribución de las edades de los clientes por región.
+
+Si necesitas ayuda, una opción de solución de la actividad estará disponible en la sección "Opinión del instructor".
+
+Ver opinión del instructor
+Opinión del instructor
+
+Existen diversas formas de solucionar esta actividad. A continuación, presentamos una sugerencia de solución para cada problema.
+
+Es importante destacar que, incluso utilizando los prompts sugeridos, el resultado puede variar un poco debido a la aleatoriedad de las IAs generativas cuando utilices tu cuenta.
+
+Podemos utilizar el siguiente prompt para la resolución del 1º desafío:
+
+""" Tenemos un DataFrame llamado "df" y queremos construir una visualización que presente la proporción de los(as) usuarios(as) que realizaron el pre-registro en Zoop Pay, la nueva solución de Zoop.
+
+En "df", tenemos la columna "zoop_pay" que contiene estos datos. Construye un gráfico de dona donde el valor "Sí" reciba el color #2a9d8f y "No" el color #edede9.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización. """
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Contabiliza la cantidad de usuarios que realizaron el pre-registro en Zoop Pay
+pre_registro_counts = df['zoop_pay'].value_counts()
+
+# Define los colores para cada valor
+colors = ['#2a9d8f' if valor == 'Sí' else '#edede9' for valor in pre_registro_counts.index]
+
+# Crea el gráfico de dona
+plt.figure(figsize=(8, 6))
+plt.pie(pre_registro_counts, labels=pre_registro_counts.index, autopct='%1.1f%%', startangle=140, colors=colors, wedgeprops=dict(width=0.3))
+
+# Añade un título al gráfico
+plt.title('Proporción de Pre-registro en Zoop Pay')
+
+# Muestra el gráfico
+plt.show()
+Copia el código
+Salida:
+
+16.png
+
+El gráfico generado muestra que menos de ¼ de los clientes que realizaron compras en 2023 en Zoop están registrados para participar en Zoop Pay. Puede ser interesante investigar el perfil de los clientes que aún no han realizado el registro, en situaciones como edad, forma de pago, región de residencia, entre otros.
+
+Ahora, vamos al 2º desafío, en el que necesitamos generar una visualización que muestre el perfil de los clientes por edad y región. Podemos utilizar el siguiente prompt para la resolución de estos procesos:
+
+""" Tenemos un DataFrame llamado "df" y queremos construir una visualización que muestre la distribución de las edades de los(as) clientes por región.
+
+En "df", tenemos las siguientes columnas:
+
+region: región de la persona que realizó la compra.
+
+edad: edad de la persona que realizó la compra.
+
+Deseamos crear una visualización de boxplot que presente la distribución de estos datos. Coloca las edades en el eje x y las regiones en el eje y.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización. """
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Creación del boxplot
+plt.figure(figsize=(12, 8))  # Define el tamaño del gráfico
+boxplot = sns.boxplot(x='edad', y='region', data=df, palette="colorblind")  # Crea el boxplot
+
+# Añade títulos y etiquetas a los ejes
+plt.title('Distribución de las Edades de los Clientes por Región')  # Título del gráfico
+plt.xlabel('Edad')  # Etiqueta del eje X
+plt.ylabel('Región')  # Etiqueta del eje Y
+
+# Muestra el gráfico
+plt.show()
+Copia el código
+Salida:
+
+17.png
+
+Este gráfico nos ofrece algunos insights interesantes. Por ejemplo, en las regiones Sur y Centro tenemos clientes con la mayor mediana de edad en comparación con otras, mientras que en la región Centro-Sur hay una mayor concentración de mediana de edad de clientes más jóvenes en relación a todas las regiones de México.
+
+La práctica es siempre muy importante para afianzar el contenido. Utilizar IAs para apoyar en el análisis de datos ayuda mucho a optimizar el tiempo en la construcción del código y puede generar ideas que contribuyan en tu proceso de análisis exploratorio de datos. Sin embargo, recuerda que es muy importante analizar las respuestas generadas por las IAs generativas para investigar si lo que se ha presentado tiene sentido y si realmente resuelve el problema que estás enfrentando.
+
+Compartir tus conocimientos y las prácticas que has estado desarrollando en este aspecto es importante para tu crecimiento en la carrera de datos. Por lo tanto, realiza los ejercicios propuestos y observa cómo esto puede ayudarte a progresar en tus habilidades de análisis de datos con IAs.
+
+Si tienes alguna duda, puedes usar el foro o el Discord de Alura.
+**************************************************************************
+10
+Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Crear más visuales siguiendo las demandas de las partes interesadas.
+Reconocer que, dado que ChatGPT no tiene acceso directo a nuestros datos, necesitamos ser precisos en la descripción de los mismos.
+Identificar los tipos de visuales, dónde pueden ser utilizados y cómo se presentan los datos.
+Obtener más información y guiar a ChatGPT a través de prompts complementarios.
+Optimizar los prompts para generar mejores resultados con la herramienta de ChatGPT.
+Con la asistencia de ChatGPT, logramos:
+
+Generar códigos para visuales de proporción y distribución de datos.
+Crear visuales incluso sin especificar el tipo de gráfico, a través de instrucciones sobre los datos existentes.
+Variar el tipo de gráfico con los mismos datos.
+*****************************************************************
+****************************************************************
+04.Técnicas de Storytelling
+01
+Proyecto del aula anterior
+ Siguiente pregunta
+
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
+*****************************************************************************
