@@ -1,0 +1,793 @@
+IA aplicada a la ciencia de datos: uso de la IA en la construcción de visualización de datos
+01.Conociendo los datos
+01 Presentación
+¡Hola! En esta clase introductoria, Álvaro te da la bienvenida al curso sobre cómo aplicar la IA en la Ciencia de Datos para crear visualizaciones de datos impactantes.
+
+Aquí están los puntos clave:
+
+Enfoque en ChatGPT: Aprenderás a usar ChatGPT para generar gráficos de manera más eficiente, crear narrativas visuales sólidas y responder preguntas de negocio importantes.
+Datos de Zoop: Trabajarás con datos de un comercio electrónico ficticio llamado Zoop.
+Requisitos: Necesitas una cuenta de ChatGPT y conocimientos intermedios de Python, Pandas, Matplotlib y Seaborn.
+Énfasis en la IA: El curso se centra en cómo la IA puede acelerar la creación de informes y mejorar los gráficos, no tanto en explicar el código en detalle.
+Resultados Aleatorios: Ten en cuenta que las respuestas de la IA generativa son aleatorias, así que es posible que necesites ajustar el código.
+¿Te gustaría que profundicemos en alguno de estos puntos?
+
+Copiar texto de Luri al portapapeles
+*******************************************************************************
+02
+Preparando el ambiente
+ Siguiente pregunta
+
+En este curso, vamos a trabajar con el storytelling de la empresa Zoop, una gran minorista que atiende a todas las regiones de Brasil a través de su comercio electrónico. Es conocida por su amplia variedad de productos, buscando atender a todo tipo de público.
+
+Como analista de datos de Zoop, has recibido una solicitud del Director de Datos para extraer los datos de ventas y el perfil de los clientes, y generar visualizaciones que ayuden en la construcción de informes, de acuerdo con algunos lineamientos proporcionados por las partes interesadas. Esto implica realizar un rápido análisis del público que tenemos en la tienda virtual y del ingreso de la empresa.
+
+En total, se te presentarán 7 preguntas para que puedas contribuir en la construcción del storytelling del informe de la empresa. Estas preguntas serán respondidas a través de visualizaciones que puedan ser presentadas a la dirección de la empresa, destacando los datos de facturación, el perfil del cliente y otros indicadores que puedan ayudar en la toma de decisiones para su tienda online.
+
+En este proyecto, importaremos dos bases de datos:
+
+Datos de clientes del comercio electrónico de Zoop, separados por el código identificador de la compra.
+Datos de ventas del comercio electrónico de Zoop en 2023, separados por el código identificador de la compra.
+Estos datos serán leídos a través de enlaces (URL) del repositorio del proyecto en GitHub.
+
+Nuestro objetivo es optimizar, mediante el uso de la IA generativa de ChatGPT, el proceso de análisis exploratorio de datos (AED) y la creación de visualizaciones utilizando el lenguaje Python. Todo este proceso tiene en cuenta el corto plazo para las entregas y la calidad de los resultados.
+
+Antes de empezar… Necesitarás descargar el cuaderno del curso y subirlo a tu Google Colab. Para usar este entorno, es necesario tener una cuenta de Gmail, ya que todo el cuaderno se almacenará en Google Drive.
+
+¿Todo listo? ¡Empecemos con el trabajo práctico! ¡Buen estudio y adelante!
+
+ Discutir en el Foro
+********************************************************************************+
+03
+Obteniendo los datos
+¡Hola! En esta clase, aprendimos cómo obtener los datos de clientes y ventas de Zoop Megastore desde URLs de GitHub y cómo crear dataframes utilizando la biblioteca pandas en Python. También aprendimos a importar la biblioteca warnings para evitar que aparezcan advertencias en la pantalla.
+
+Además, exploramos las columnas de los dataframes de clientes y ventas, como ID_de_compra, ID_de_cliente, ciudad, estado, región, edad, sexo_biológico, si pertenece al programa de cashback o no, y la nota que este cliente ha atribuido a su experiencia de compras. También vimos las columnas de ventas, como fecha, horario, categoría, precio_unitario, cantidad, valor del envío y el método_pago.
+
+¿Te gustaría que profundicemos en algún aspecto en particular o tienes alguna pregunta sobre lo que hemos cubierto hasta ahora?
+*********************************************************************************
+04
+Entendiendo los datos
+¡Hola! En esta clase, aprendimos cómo usar la IA para explorar y entender los datos de clientes y ventas de un e-commerce. Aquí tienes un resumen de los puntos clave:
+
+Preparación del entorno: Importamos las bases de datos de clientes y ventas en formato de DataFrames de pandas.
+Exploración de la base de clientes:
+Utilizamos ChatGPT para generar código Python que nos ayude a conocer mejor el DataFrame clientes.
+Aplicamos funciones como head(), info() y describe() para visualizar las primeras filas, obtener información general y estadísticas descriptivas.
+Analizamos la distribución por sexo biológico y la participación en el programa de cashback.
+Exploración de la base de ventas:
+Repetimos el proceso con el DataFrame ventas, utilizando ChatGPT para generar el código.
+Convertimos la columna de fecha de compra al tipo DateTime para facilitar la creación de gráficos.
+Analizamos las estadísticas descriptivas de las ventas, como la cantidad promedio de ítems vendidos y la distribución de los precios unitarios.
+En resumen, esta clase nos enseñó cómo utilizar la IA para realizar una exploración inicial de los datos, comprender su contenido y prepararlos para la creación de visualizaciones. ¡Espero que te sea útil! ¿Hay algo más en lo que te pueda ayudar?
+//////////////////////////////////////////////////////////////////////////////////////
+05
+Generando un prompt para la exploración de datos
+ Siguiente pregunta
+
+Daniela es una analista de datos en Serenatto - Café & Bistrô, una franquicia de restaurantes populares que ofrece una amplia variedad de platos de la cocina francesa e italiana. Ha recibido una solicitud para analizar, en poco tiempo, los datos de las ventas diarias de la sucursal de San José. Podemos observar una parte de los datos en la tabla a continuación:
+
+id	fecha	producto	valor	metodo_pago
+0	01-01-2024	Agua Mineral	3.00	Tarjeta de Débito
+1	01-01-2024	Salteña	5.00	Tarjeta de Débito
+2	01-01-2024	Petit Gateau	7.00	Tarjeta de Crédito
+3	01-01-2024	Jugo de Fresa	4.50	Efectivo
+4	01-01-2024	Crostini	8.00	Efectivo
+Ella pensó en elaborar un pequeño prompt que realizara las siguientes tareas: leer el archivo .xlsx con los datos pasándolos a un DataFrame, cambiar el formato de la fecha a uno que pudiera ser fácilmente utilizado en visualizaciones, explorar brevemente los datos y crear una nueva base manteniendo solo las columnas con las fechas y los valores de las ventas.
+
+Considerando las etapas descritas anteriormente, ¿cuál de los prompts a continuación tiene mayor probabilidad de ser interpretado correctamente por ChatGPT, generando así los tratamientos deseados por Daniela?
+
+Alternativa incorreta
+Crea un código en Python que lea la base de datos ventas.xlsx pasándola al DataFrame “df”. Cambia el formato de la columna “fecha” a datetime, donde la fecha originalmente está en el formato “DD-MM-YYYY”. Explora brevemente los datos y mantén solo las columnas “fecha” y “valor” de “df”.
+
+
+Alternativa incorreta
+Crea un código que lea la base de datos pasándola al DataFrame “df”. Cambia el formato de la columna “fecha” a datetime, donde la fecha originalmente está en el formato “DD-MM-YYYY”. Explora brevemente los datos y crea un DataFrame llamado “ventas” con solo las columnas “fecha” y “valor” de “df”.
+
+
+Alternativa incorreta
+Crea un código en Python que lea la base de datos ventas.xlsx pasándola al DataFrame “df”. Cambia el formato de la columna “fecha” a datetime, donde la fecha originalmente está en el formato “YYYY-MM-DD”. Explora brevemente los datos y crea un DataFrame llamado “ventas” con solo las columnas “fecha” y “valor” de “df”.
+
+
+Alternativa incorreta
+Crea un código en Python que lea la base de datos ventas.xlsx pasándola al DataFrame “df”. Cambia el formato de la columna “fecha” a datetime, donde la fecha originalmente está en el formato “DD-MM-YYYY”. Explora brevemente los datos y crea un DataFrame llamado “ventas” con solo las columnas “fecha” y “valor” de “df”.
+
+
+Este es el prompt ideal, ya que especifica todos los procesos necesarios para lograr el comportamiento deseado, generando un nuevo DataFrame con los datos resumidos.
+************************************************************************************************
+06
+Para saber más: como crear un buen prompt con chat gpt
+ Siguiente pregunta
+
+Una de las habilidades más importantes para la interacción con IAs generativas como ChatGPT es la capacidad de crear buenos prompts, guiando la herramienta de acuerdo con tu conocimiento sobre el negocio. La creación de un prompt eficaz en ChatGPT es fundamental para obtener resultados precisos y relevantes para la resolución de problemas.
+
+En el contexto de un proyecto de análisis de datos, como el que estamos trabajando aquí, un prompt bien elaborado puede ser la clave para obtener insights valiosos. A continuación, se presentan algunas buenas prácticas y ejemplos, teniendo en cuenta un proyecto simple de Ciencia de Datos:
+
+Sé específico y directo:
+
+Explica directamente lo que deseas que ChatGPT ejecute. Esto ayuda a la IA a entender mejor tu necesidad, proporcionando respuestas más precisas.
+
+Ejemplo: “Realiza un análisis exploratorio de datos en la base ‘zoop_ventas.csv' usando las bibliotecas de manipulación de datos de Python. Presenta un resumen estadístico de las ventas por región”.
+
+Proporciona contexto cuando sea necesario:
+
+Informa a ChatGPT del contexto del proyecto, incluyendo datos, objetivos y restricciones. Esto puede mejorar significativamente la calidad de las respuestas. Sin embargo, evita información innecesaria que pueda confundir a la IA.
+
+Ejemplo: "Estoy trabajando en un proyecto de análisis de ventas de una tienda minorista. La base de datos contiene información de ventas diarias por categoría de producto y región en 2023. Ayúdame a calcular la suma de las ventas de 'Electrónicos' por trimestre".
+
+Especifica el formato de la respuesta:
+
+Indica el formato deseado para la respuesta, como gráficos, tablas o explicaciones detalladas.
+
+Ejemplo: "Crea un gráfico de líneas que muestre la evolución de las ventas a lo largo del último año, segmentado por categoría de productos".
+
+Indica el nivel de detalle deseado:
+
+Deja claro el nivel de detalle o profundidad de la explicación que estás buscando. Esto ayuda a la IA a ajustar la respuesta a tu necesidad de comprensión.
+
+Ejemplo: "¿Podrías proporcionarme un ejemplo comentado de cómo usar la función groupby() de pandas para agrupar datos por categoría y calcular la suma total de ventas para cada grupo?"
+
+Usa términos técnicos correctos:
+
+Pon atención a la terminología específica relacionada con tu área de interés. Esto asegura que la IA comprenda el dominio de tu pregunta y responda de forma adecuada.
+
+Ejemplo: “¿Cómo implemento un modelo de regresión lineal en Python usando scikit-learn para predecir ventas futuras con base en gastos de publicidad?”
+
+Divide tareas complejas en etapas simples:
+
+Si el proyecto involucra varias etapas, divídelo en partes más pequeñas e instruye a ChatGPT paso a paso. Esto facilita que la IA te ayude de manera eficaz.
+
+Ejemplo:
+
+"¿Cómo puedo manejar valores faltantes en mi conjunto de datos usando pandas?"
+
+"¿Cuál es la mejor manera de visualizar la distribución de edades en mi conjunto de datos usando matplotlib?"
+
+“¿Podrías ajustar el visual de la distribución de edades colocando las etiquetas y labels con tamaño 12 y color #CCCCCC?”
+
+Mantente abierto a interacciones:
+
+Esté siempre preparado(a) para realizar ajustes en tus prompts basados en las respuestas recibidas. La interacción puede ayudar a refinar las respuestas y obtener exactamente lo que necesitas.
+
+Ejemplo: “Esta respuesta puede mejorar. ¿Qué tal si redondeamos los valores a dos decimales y mostramos en el gráfico solo los valores mayores a 1 millón (1e6)?”
+
+Estos consejos son fundamentales en la construcción de prompts bien instruidos, como los que encontrarás a lo largo de este curso. Observa cómo se describen los pasos y acciones en los prompts del curso y cómo puedes aplicarlos en tu proyecto utilizando ChatGPT.
+
+Asegúrate de comunicar tus intenciones de forma precisa, dividir tareas complejas en etapas manejables y proporcionar ejemplos cuando sea apropiado. Esto te ayudará a obtener respuestas más relevantes y útiles para tu proyecto, haciendo la interacción con el chat más eficaz.
+************************************************************************
+07
+Tipos de gráficos
+¡Hola! En esta clase, aprendiste cómo consolidar datos de diferentes fuentes en una única tabla utilizando la columna ID_compra como clave. También aprendiste a organizar las columnas en una secuencia específica y a utilizar ChatGPT para generar sugerencias de visualizaciones basadas en los datos consolidados.
+
+Además, se discutieron diferentes tipos de visualizaciones que se pueden crear, como gráficos de líneas de la facturación mensual, gráficos de barras por categoría, mapas de calor de días y horas de mayor facturación, histogramas de edades, gráficos circulares o de barras del sexo biológico y gráficos de barras por región. Estas visualizaciones pueden ayudar a entender mejor el comportamiento de los clientes y las tendencias de ventas, lo que puede ser clave para tomar decisiones estratégicas.
+
+¿Te gustaría que profundicemos en algún tema en particular o tienes alguna pregunta sobre lo que hemos visto hasta ahora?
+///////////////////////////////////////////////////////////////////////////////////////////////////
+08
+Ajustando el prompt
+ Siguiente pregunta
+
+Juan está aprendiendo cómo utilizar ChatGPT en un proyecto de análisis de datos que pretende agregar a su portafolio. Durante su investigación, encontró dos bases que contenían datos sobre el PIB y los Valores Agregados de Bienes y Servicios.
+
+La primera base (pib_estados) tiene el siguiente formato en sus primeras 10 líneas:
+
+año	estado	region	pib	impuesto_liquido	va
+0	2002	AC	Norte	2971301277	228471013
+1	2002	AL	Noreste	11536852891	937933640
+2	2002	AM	Norte	22093338008	3876992799
+3	2002	AP	Norte	3173342678	199411105
+4	2002	BA	Noreste	58842975944	8368251983
+5	2002	CE	Noreste	28718840361	3677581705
+6	2002	DF	Centro-Oeste	53902199799	6926279208
+7	2002	ES	Sureste	27048996552	4743779770
+8	2002	GO	Centro-Oeste	38629364574	4484244717
+9	2002	MA	Noreste	15924002514	1357799240
+La segunda base (va_estados) tiene el siguiente formato en sus primeras 10 líneas:
+
+año	estado	va_agropecuaria	va_industria	va_servicios	va_adespss
+0	2002	AC	284337190	355041179	1071069387	1032382508
+1	2002	AL	2474313378	2168565501	3530694271	2425346094
+2	2002	AM	1239199988	7770508485	5965772157	3240864579
+3	2002	BA	6612124525	11847928358	22322715730	9691955360
+5	2002	CE	1885081291	5671628251	11594124567	5890424538
+6	2002	DF	165416683	4089946543	21927573402	20792983964
+7	2002	ES	784413923	8164182067	9766872482	3589748305
+8	2002	GO	5051406044	8737191313	14922918441	5433604075
+9	2002	MA	1867205923	2732201913	6537050283	3429745159
+Juan desea concatenar las bases en una sola, manteniendo solo las columnas con el año, el estado, la región, el PIB, los impuestos líquidos, el valor agregado y el valor agregado de la agropecuaria. Así, Juan creó el siguiente prompt:
+Crea un código que concatene las bases “pib_estados” y “va_estados” en una única tabla por año y estado, manteniendo las columnas con el año, el estado, la región, el PIB, los impuestos líquidos, el valor agregado y el valor agregado de la agropecuaria.
+Copia el código
+Con base en este prompt y lo que hemos aprendido a lo largo de las clases, ¿qué podemos agregar para mejorarlo? Elige las alternativas correctas.
+
+Alternativa correta
+Hablar sobre los tipos de datos presentes en las tablas, si son números, cadenas o booleanos.
+
+
+Alternativa correta
+Especificar detalles, como el nombre correcto de las columnas para que el código sea más preciso y requiera menos modificaciones.
+
+
+Dejar claro el nombre de las columnas puede ayudar a crear un código menos genérico y más específico para el problema que deseas resolver.
+
+Alternativa correta
+Definir cuál será el lenguaje de programación que utilizará ChatGPT para crear el código deseado.
+
+
+Dejar clara la elección del lenguaje de programación es extremadamente importante para guiar a la IA en la resolución del problema, de acuerdo con los paquetes específicos del lenguaje que estés utilizando.
+
+Alternativa correta
+Especificar la cantidad de columnas y registros para ajustar ChatGPT a la parte de los datos que se utilizarán.
+*****************************************************************************+
+09
+Para saber más: sintetizando el contenido
+ Siguiente pregunta
+
+En este curso, vamos a aprender a utilizar la IA de ChatGPT para la creación y refinamiento de los visuales de acuerdo con premisas que responden a las preguntas planteadas por las partes interesadas.
+
+Antes de avanzar a la próxima clase, es importante que conozcamos todos los datos con los que estamos trabajando, entendiendo qué representa cada columna y cómo puede ser importante en la construcción de la narrativa de ventas y perfiles de los clientes de Zoop.
+
+Para ello, nosotros, como analistas de datos de Zoop, generamos una única tabla con los datos necesarios para el análisis. Estos datos son de extrema importancia para la continuación de nuestro proyecto y, por lo tanto, necesitamos comprender la información a la que tenemos acceso. Así que, vamos a revisar los datos que tenemos en cada columna de la tabla df generada en el video anterior.
+
+Las columnas de "df" son:
+
+ID_compra: número único asignado a la compra realizada, en formato int
+fecha: fecha de la compra, en formato datetime
+horario: hora de la compra, en formato object
+categoria: categoría del producto, en formato object
+precio_unitario: precio de una unidad del producto, en formato float
+cantidad: cantidad vendida del producto, en formato int
+envio: costo de envío a ser pagado en total de la compra, en formato float
+metodo_pago: método de pago de la compra, en formato object
+ID_cliente: número único asignado al cliente, en formato int
+edad: edad del cliente, en formato int
+sexo_biologico: sexo biológico del cliente, en formato object
+ciudad: ciudad del cliente, en formato object
+estado: estado del cliente, en formato object
+region: región del cliente, en formato object
+cashback: si el cliente participa o no en el programa de cashback de la tienda, en formato object
+nota: evaluación del cliente por la compra, en formato int
+Las preguntas que vamos a responder a lo largo del curso se presentarán en la próxima clase, junto con el proceso que realizaremos desde la generación hasta el refinamiento del gráfico antes de la exportación de las imágenes.
+
+Entonces, ¿comenzamos a crear nuestros visuales? ¡Te espero en la próxima clase!
+**********************************************************************************************+
+10
+Desafío: Zoop Pay
+ Siguiente pregunta
+
+Has recibido una nueva solicitud de las partes interesadas de Zoop, en la que será necesario agregar más columnas de otra base de datos a la tabla consolidada en el video anterior.
+
+A diferencia de las actividades que estamos realizando en los videos de este curso, aquí también utilizaremos esta nueva base para la construcción de los visuales dentro de los ejercicios de "Manos a la obra", enfocándonos en las demandas presentadas en las instrucciones de los ejercicios.
+
+Los archivos que vamos a utilizar en esta parte del proyecto son:
+
+Datos de clientes del e-commerce de Zoop, separados por el código identificador de la compra.
+Datos de ventas del e-commerce de Zoop en 2023, separados por el código identificador de la compra.
+Datos de clientes pre-registrados en Zoop Pay, la billetera digital de Zoop que está en proceso de implementación.
+Estos datos se leerán a través de enlaces (URL) que compartimos a continuación:
+
+url_clientes = "https://gist.githubusercontent.com/ahcamachod/d08898e1cc84c7271856e78d9558ca3d/raw/2f7e1fa53711efe6433a5c5ec79948f600591cb9/clientes_zoop.csv"
+url_ventas = "https://gist.githubusercontent.com/ahcamachod/966d7162a3c3a2769b8770b35abf1bcc/raw/d79941b3fa46a450f3611589abd8663399c1277b/ventas_zoop.csv"
+url_zoop_pay = "https://gist.githubusercontent.com/ahcamachod/ce728231a836a973c0df94a9f03ed871/raw/8db6da43d7cd94fcab937208067d0fceb521b78c/zoop_pay.csv"
+Copia el código
+Ahora que ya sabemos cuáles son los datos necesarios para la realización del proyecto, vamos a abrir el notebook mencionado anteriormente y realizar la siguiente actividad:
+
+Construye y ejecuta un prompt en ChatGPT solicitando que lea las tres bases de datos y cree una única tabla concatenándolas. Recuerda ser bastante específico en cuanto al orden de las columnas y cuáles serán necesarias para realizar la concatenación de los datos, además de tratar la columna de fecha para el formato adecuado.
+
+Consejo 1: Para facilitar el proceso, pide a ChatGPT que primero concatene los datos de clientes y ventas en una tabla llamada df y, finalmente, que concatene esta nueva tabla con la base de clientes pre-registrados en Zoop Pay, generando así la tabla consolidada con todos los datos. Este proceso puede realizarse paso a paso en dos prompts, por ejemplo.
+
+Si necesitas ayuda, una opción de solución de la actividad estará disponible en la sección "Opinión del instructor".
+
+Ver opinión del instructor
+Opinión del instructor
+
+Existen diversas formas de solucionar esta actividad. Presentamos a continuación una sugerencia de solución para cada problema.
+
+Es importante destacar que, incluso utilizando los prompts sugeridos, el resultado puede variar un poco debido a la aleatoriedad de las IAs generativas cuando utilices tu propia cuenta.
+
+Podemos utilizar el siguiente prompt para la resolución de la concatenación inicial entre la base de ventas y clientes:
+
+Vamos a actuar como analistas de datos de un e-commerce. Recibimos tres bases de datos con la información de los clientes y ventas en 2023 y qué clientes están pre-registrados en Zoop Pay, respectivamente.
+
+Vamos a comenzar uniendo las dos primeras bases de nuestro proyecto ("ventas" y "clientes") en un DataFrame llamado "df" utilizando como clave la columna "ID_compra". Además, vamos a organizar las columnas en la siguiente secuencia:
+
+["ID_compra", "fecha", "hora", "categoría", "precio_unitario", "cantidad", "envio", "metodo_pago", "ID_cliente", "edad", "sexo_biologico", "ciudad", "estado", "region", "cashback", "nota"]
+Copia el código
+Construye un código para ejecutar esta etapa usando Python y la biblioteca Pandas.
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+
+# Ejemplo de cómo cargar los DataFrames, si es necesario:
+# ventas = pd.read_csv('ruta_al_archivo_de_ventas.csv')
+# clientes = pd.read_csv('ruta_al_archivo_de_clientes.csv')
+
+# Uniendo las bases "ventas" y "clientes" usando la columna "ID_compra" como clave
+df = pd.merge(ventas, clientes, on="ID_compra")
+
+# Organizando las columnas en la secuencia especificada
+columnas_ordenadas = ["ID_compra", "fecha", "hora", "categoría", "precio_unitario", "cantidad", "envio", "metodo_pago", "ID_cliente", "edad", "sexo_biologico", "ciudad", "estado", "region", "cashback", "nota"]
+
+df = df[columnas_ordenadas]
+
+# Mostrando las primeras filas del DataFrame resultante para verificación
+df.head()
+Copia el código
+Nota que en este código generado por ChatGPT necesitamos ajustar la parte que lee los datos de las bases, pasando los enlaces como creados al inicio del cuaderno de Desafíos.
+
+Ahora, vamos a la segunda parte del problema, concatenando este DataFrame creado con la base Zoop Pay y ajustando la columna de fecha a formato datetime. Por lo tanto, podemos utilizar el siguiente prompt para la resolución de estos procesos:
+
+Ahora, vamos a unir el "df" con la base "zoop_pay", leída a partir de la URL "url_zoop_pay", generando un nuevo "df". Para unir las bases, utilizaremos la columna "ID_cliente". Además, ajustaremos la columna "fecha" al formato datetime, donde su formato en la base de datos es "YYYY-MM-DD".
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+
+# Sustituye url_zoop_pay por la URL real proporcionada para la base zoop_pay
+zoop_pay = pd.read_csv(url_zoop_pay)
+
+# Uniendo el DataFrame df con la base zoop_pay utilizando la columna "ID_cliente"
+df = pd.merge(df, zoop_pay, on="ID_cliente")
+
+# Ajustando la columna "fecha" al formato datetime
+df['fecha'] = pd.to_datetime(df['fecha'], format='%Y-%m-%d')
+
+# Mostrando las primeras filas del DataFrame resultante para verificación
+df.head()
+Copia el código
+Ahora, veamos el resultado generado por medio del código proporcionado por ChatGPT:
+
+index	ID_compra	fecha	categoria	precio_unitario	cantidad	envio	metodo_pago	ID_cliente	edad	sexo_biologico	ciudad	estado	region	cashback	nota	zoop_pay
+0	6	2023-01-03 00:00:00	Electrónicos	4457.9	4	713.26	Paypal	6149	30	Masculino	Hermosillo	Sonora	Noroeste	Sí	10	No
+1	2467	2023-08-02 00:00:00	Alimentos y bebidas	13.9	1	0.97	Transferencia	6149	30	Masculino	Hermosillo	Sonora	Noroeste	Sí	8	No
+2	5	2023-01-03 00:00:00	Herramientas y construcción	115.9	1	0.0	Transferencia	9491	36	Masculino	Ciudad de México	Ciudad de México	Centro	Sí	8	Sí
+3	9	2023-01-03 00:00:00	Belleza e higiene	68.9	2	13.78	Tarjeta de Crédito	5288	39	Femenino	Aguascalientes	Aguascalientes	Centro-Norte	No	7	No
+4	4	2023-01-03 00:00:00	Herramientas y construcción	80.9	5	40.45	Transferencia	9679	35	Masculino	Veracruz	Veracruz	Golfo	Sí	9	Sí
+La práctica siempre es muy importante para fijar el contenido. Utilizar IAs para ayudar en el análisis de datos es una gran herramienta para optimizar el tiempo en la construcción del código y también puede generar ideas que contribuyan mucho en tu proceso de análisis exploratorio de datos. Pero recuerda, es muy importante que analices las respuestas generadas por las IAs para investigar si lo que se ha presentado tiene sentido y si realmente resuelve el problema que estás enfrentando.
+
+Compartir tus conocimientos y las prácticas que has estado desarrollando en este punto es clave para tu crecimiento dentro de la carrera de datos. Por lo tanto, busca realizar los ejercicios propuestos y observa cómo esto puede ayudarte a progresar en tus habilidades de análisis de datos con IAs.
+
+Si tienes alguna duda, puedes usar el foro o el Discord de Alura.
+
+******************************************************************************************
+11
+Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Comprender el problema del negocio y la demanda para la extracción de datos.
+Explorar las bases de datos del proyecto y buscar insights para la creación de visuales.
+Definir qué tareas solicitaremos con el apoyo de la IA de ChatGPT.
+Crear un buen prompt para ChatGPT.
+Pedir sugerencias más precisas de visuales a ChatGPT.
+Con la asistencia de ChatGPT, logramos:
+
+Explorar brevemente los datos de ventas y el perfil del cliente de Zoop.
+Unir las bases y organizarlas para generar una tabla consolidada para los análisis.
+Investigar los posibles visuales que podemos crear para la narrativa del informe de Zoop.
+**************************************************************************
+**********************************************************************+**
+02.Visualización de datos
+01
+Proyecto del aula anterior
+ Siguiente pregunta
+
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
+************************************************************************************
+02
+Definiendo las visualizaciones
+¡Hola! En esta clase, aprendimos cómo utilizar ChatGPT para generar visualizaciones de datos basadas en preguntas de negocio específicas. Aquí tienes un resumen de los puntos clave:
+
+Preguntas de Negocio: Definimos preguntas de negocio claras para guiar la creación de visualizaciones relevantes. Por ejemplo, para el equipo de ventas, preguntas como "¿Cuáles fueron los métodos de pago más utilizados en 2023?" son cruciales.
+Exploración de Datos con ChatGPT: Utilizamos ChatGPT para obtener ideas iniciales de visualizaciones, aunque se enfatizó que las sugerencias pueden variar debido a la aleatoriedad de la IA.
+Creación de Tablas Resumidas: Aprendimos a crear tablas resumidas utilizando value_counts() y reset_index() para preparar los datos para la visualización.
+Generación de Gráficos con Seaborn: Utilizamos la biblioteca seaborn para crear un gráfico de barras que muestra la cantidad de cada método de pago utilizado. Ajustamos el tamaño del gráfico, los títulos y las etiquetas para que la visualización sea clara y efectiva.
+Importancia de la Identidad Visual: Se mencionó que, aunque ChatGPT genera visualizaciones útiles, es importante ajustarlas para que coincidan con la identidad visual de la empresa.
+En resumen, esta clase nos proporcionó una base sólida para utilizar la IA en la creación de visualizaciones de datos, desde la definición de preguntas de negocio hasta la generación de gráficos informativos. ¿Hay algo en particular sobre lo que te gustaría profundizar o tienes alguna otra pregunta?
+******************************************************************************
+03
+Para saber más: premisas de las partes interesadas - Liderazgo y colaboradores
+ Siguiente pregunta
+
+En el vídeo anterior, construimos la versión inicial de nuestra primera visualización para el storytelling de Zoop. Antes de continuar con las próximas visualizaciones, es importante definir el proceso que seguiremos para garantizar el mejor resultado en la creación de los mismos para los informes de la empresa.
+
+Inicialmente, construiremos la primera versión de todos los visuales respondiendo a las preguntas planteadas por las partes interesadas. Esta etapa se llevará a cabo en esta y en la próxima clase de este curso. En una segunda fase, realizaremos el refinamiento de algunos de los visuales aprendiendo las principales técnicas de storytelling y ajuste de visuales con las bibliotecas de visualización de Python. Finalmente, ampliaremos el refinamiento al resto de los visuales, exportándolos como imágenes para su uso en informes.
+
+Importante: En la generación de la primera versión de los visuales, los códigos y visuales generados en tu proyecto pueden variar en relación a los de las clases, debido a la aleatoriedad de la IA generativa elegida. Sin embargo, en esta etapa, lo importante es la construcción de la primera versión de los visuales.
+
+Las preguntas que responderemos durante la elaboración de los visuales para el storytelling de Zoop con el soporte de la IA de ChatGPT son las siguientes:
+
+Ventas
+
+¿Cuáles fueron los métodos de pago más utilizados en 2023?
+¿Cuál fue la facturación por categoría en 2023?
+¿Cómo fueron las ventas a lo largo de los meses en 2023?
+¿Cómo se divide la venta por trimestre según el método de pago? ¿Existe un período en el que algún tipo de pago sobresale?
+Perfil del cliente
+
+¿Cuál es la proporción de clientes que participan en nuestro programa de cashback?
+¿Cómo están distribuidas las evaluaciones de producto? ¿Tenemos buenos números generales?
+¿Cómo está distribuido nuestro público por edad y sexo biológico? ¿Existe un grupo que sobresale?
+Cada pregunta será explorada utilizando un tipo de visualización junto con elementos visuales para enfocar la atención de nuestro público en lo que queremos informar y destacar en nuestros datos.
+
+¡Cuento contigo en este camino! ¡Felices estudios y hasta el próximo vídeo!
+**********************************************************************************
+04
+Comparando los datos
+¡Hola! En esta clase, aprendiste a usar ChatGPT para crear visualizaciones de datos a partir de un dataframe. Se abordaron los siguientes puntos:
+
+Gráfico de barras horizontales: Se generó un gráfico de barras horizontales para visualizar la facturación por categoría de productos. Se explicó cómo calcular la facturación y cómo usar las bibliotecas de visualización de datos de Python para crear el gráfico.
+Gráfico de líneas: Se creó un gráfico de líneas para mostrar las ventas totales mensuales a lo largo del año 2023. Se explicó cómo agrupar los datos por mes, cómo traducir los nombres de los meses y cómo utilizar el gráfico de líneas para visualizar series temporales.
+¿Te gustaría que repasemos algún punto en particular o que te proporcione ejemplos adicionales?
+////////////////////////////////////////////////////////////////////////////////////////////////
+ 05 Buenas prácticas en la redacción del prompt
+ Siguiente pregunta
+
+Para aprovechar los beneficios de la IA generativa de ChatGPT en la exploración de datos, es muy importante entender cómo crear prompts efectivos que logren los resultados deseados, basándonos en nuestro conocimiento del negocio.
+
+Siguiendo lo que hemos aprendido hasta ahora, ¿cuáles de las opciones a continuación representan buenas prácticas para la redacción de prompts para la generación de visualizaciones de datos en Python?
+
+Alternativa correta
+Incluir información sobre la estructura de los datos y qué variables deseas visualizar.
+
+
+Esta es una buena práctica en la redacción de un prompt, ya que incluir detalles sobre la estructura de los datos y qué variables deseas visualizar es esencial para crear visualizaciones de datos que destaquen las relaciones y patrones deseados para el usuario.
+
+Alternativa correta
+Especificar la biblioteca de visualización de datos que deseas usar (como matplotlib, seaborn o plotly).
+
+
+Esta es una buena práctica en la redacción de un prompt, ya que diferentes bibliotecas tienen capacidades y sintaxis variadas. Esta descripción orienta a la IA en la generación de la respuesta para la sintaxis y las funcionalidades específicas de estas herramientas, asegurando que las instrucciones y el código generado sean compatibles con las preferencias del usuario y los requisitos técnicos del proyecto.
+
+Alternativa correta
+Describir las variables a utilizar sin mencionar el tipo de visualización deseado.
+
+
+Alternativa correta
+Dejar la elección de la paleta de colores y el estilo del gráfico a criterio de la IA, sin proporcionar preferencias.
+
+************************************************************************************
+ 06 Composición de datos dinámicos
+¡Hola! En esta clase, aprendiste sobre gráficos de composición, enfocándote en datos dinámicos que cambian con el tiempo. El objetivo principal fue visualizar cómo se dividen las ventas por trimestre según el método de pago.
+
+Aquí tienes un resumen de los puntos clave:
+
+Gráficos de Composición: Son útiles para entender cómo se componen tus datos, especialmente cuando cambian con el tiempo.
+Datos Dinámicos: Se refieren a datos que varían a lo largo del tiempo, como las ventas trimestrales.
+Uso de Pandas y Matplotlib: Se utilizan estas bibliotecas de Python para crear visualizaciones de datos.
+Unstack(): Este método es útil para organizar los datos en una tabla que facilita la visualización, mostrando los trimestres como índices y los métodos de pago como columnas.
+Gráfico de Barras Apiladas: Permite comparar cómo se comporta cada variable (método de pago) en diferentes períodos (trimestres).
+¿Te gustaría que profundizáramos en alguno de estos puntos o tienes alguna pregunta específica?
+/////////////////////////////////////////////////////////////////////////////////////////////////
+Resp chatGPT:
+import pandas as pd
+
+# Cargar el archivo CSV
+df = pd.read_csv('panini.csv')
+
+# Asegurar que la columna 'fecha' esté en formato datetime
+df['fecha'] = pd.to_datetime(df['fecha'])
+
+# Filtrar por producto "Panini"
+df_panini = df[df['producto'] == 'Panini']
+
+
+# Agrupar por mes y sumar los valores de ventas
+ventas_mensuales = df_panini.resample('M', on='fecha')['valor'].sum()
+
+-------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Crear gráfico de línea
+plt.figure(figsize=(10, 5))
+sns.lineplot(
+    x=ventas_mensuales.index.strftime('%B %Y'),  # Nombres de los meses con año
+    y=ventas_mensuales.values,
+    marker='o'
+)
+
+plt.title('Ventas Mensuales de Panini')
+plt.xlabel('Mes')
+plt.ylabel('Ventas ($)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.grid(True)
+plt.show()
+
+/////////////////////////////////////////////////////////////////////////////
+07 Respuesta del prompt
+ Siguiente pregunta
+
+Volvemos a una de las demandas de Daniela, analista de datos en Serenatto - Café & Bistrô.
+
+En esta nueva solicitud, ella necesita analizar las ventas de "Panini" en el último semestre de 2023 en la sucursal de San José. Se sospecha que las ventas de este producto están bajando cada vez más y, por lo tanto, se solicitó el análisis.
+
+Podemos observar cómo está la estructura de los datos en la tabla a continuación:
+
+id	fecha	producto	valor	metodo_pago
+0	2720	2023-07-01	Risoto de Funghi	13.0	Tarjeta de Débito
+1	2721	2023-07-02	Tiramisú	10.0	Tarjeta de Débito
+2	2722	2023-07-02	Tiramisú	10.0	Tarjeta de Crédito
+3	2723	2023-07-02	Ratatouille	8.5	Transferencia
+4	2724	2023-07-03	Ratatouille	8.5	Efectivo
+La tabla contiene los datos de ventas de los productos de Serenatto en el último semestre de 2023 de esta sucursal y se puede acceder en el archivo panini.csv. Para analizar los datos, Daniela creó el siguiente prompt para generar una visualización de las ventas de este producto con el soporte de ChatGPT:
+
+"""Tenemos un DataFrame llamado "df" y queremos construir un gráfico de línea que muestre las ventas de "Panini" por mes. Utiliza solo las columnas de "df":
+
+fecha: con la fecha de las ventas ya en formato datetime (aaaa-mm-dd)
+
+valor: con el valor de cada venta.
+
+producto: con los productos vendidos. Vamos a utilizar el producto "Panini".
+
+Agrupa las fechas de la columna "fecha" por mes y agrega los datos solo por la suma de las ventas. Por último, cambia el eje de las fechas para mostrar los meses escritos.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización."""
+
+Considerando este prompt escrito para ChatGPT, ¿cuál de los códigos a continuación es una posible respuesta de ChatGPT?
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+df_panini = df[df['producto'] == 'Panini']
+df_panini['fecha'] = pd.to_datetime(df_panini['fecha'], format='%Y-%m-%d')
+ventas_por_mes = df_panini.groupby(df_panini['fecha'].dt.to_period('M'))['valor'].sum()
+plt.figure(figsize=(10, 6))
+plt.plot(ventas_por_mes.index.to_timestamp(), ventas_por_mes, marker='o', linestyle='-')
+plt.title('Ventas mensuales de Panini')
+plt.xlabel('Mes')
+plt.ylabel('Total de ventas')
+plt.xticks(ventas_por_mes.index.to_timestamp(), [x.strftime('%b %Y') for x in ventas_por_mes.index.to_timestamp()], rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+Este es el código correcto y posible de ser descrito por ChatGPT, ya que genera una visualización de gráfico de línea con los datos de las ventas de Panini en el último semestre de 2023. La gráfica generada es la siguiente:
+
+1.jpg
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+ventas_por_mes = df.groupby(df['fecha'].dt.to_period('M'))['valor'].sum()
+plt.figure(figsize=(10, 6))
+plt.barh(ventas_por_mes, width = ventas_por_mes.index.to_timestamp())
+plt.title('Ventas mensuales de Panini')
+plt.xlabel('Mes')
+plt.ylabel('Total de ventas')
+plt.yticks(ventas_por_mes.index.to_timestamp(), [y.strftime('%b %Y') for y in ventas_por_mes.index.to_timestamp()], rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+df_panini = df[df['producto'] == 'Panini']
+ventas_por_mes = df_panini.groupby(df_panini['fecha'].dt.to_period('M'))['valor'].sum()
+
+plt.figure(figsize=(10, 6))
+plt.bar(ventas_por_mes.index.to_timestamp(), ventas_por_mes, width=10)
+plt.title('Ventas mensuales de Panini')
+plt.xlabel('Mes')
+plt.ylabel('Total de ventas')
+plt.xticks(ventas_por_mes.index.to_timestamp(), [x.strftime('%b %Y') for x in ventas_por_mes.index.to_timestamp()], rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+ventas_por_mes = df.groupby(df['fecha'].dt.to_period('M'))['valor'].sum()
+plt.figure(figsize=(10, 6))
+plt.plot(ventas_por_mes.index.to_timestamp(), ventas_por_mes, marker='o', linestyle='-')
+plt.title('Ventas mensuales de Panini')
+plt.xlabel('Mes')
+plt.ylabel('Total de ventas')
+plt.xticks(ventas_por_mes.index.to_timestamp(), [x.strftime('%b %Y') for x in ventas_por_mes.index.to_timestamp()], rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+¡Enhorabuena, has acertado!
+*************************************************************************************
+08 Haga lo que hicimos
+ Siguiente pregunta
+
+Gráfico de columnas apiladas
+
+Aprendimos en el video anterior a construir un gráfico de columnas apiladas para la composición de datos con el apoyo del ChatGPT. ¿Qué te parece si aprendemos también otro tipo de visualización que combine la composición y comparación de datos a través de un problema?
+
+La directiva de Zoop está preocupada por las categorías con menor facturación anual en su e-commerce y, por eso, le gustaría entender el desempeño de esas categorías de manera aislada. Para esto, recibimos la demanda de explorar la facturación trimestral investigando cómo está el equilibrio de estas ventas por cada categoría.
+
+Para resolver este problema, vamos a agrupar las 3 categorías con las menores facturaciones anuales, separándolas por trimestre mediante un gráfico de columnas agrupadas.
+
+¿Por qué un gráfico de columnas agrupadas?
+
+Un gráfico de columnas agrupadas es ideal para comparar categorías diferentes en relación con una variable (puede ser temporal o no), mostrando cómo los valores se comparan dentro de cada categoría en columnas separadas, facilitando la visualización de patrones y diferencias entre grupos.
+
+A continuación, vamos a pedir ayuda al ChatGPT para construir esta visualización mediante el siguiente prompt:
+
+Tenemos un DataFrame llamado "df" y queremos construir una visualización de un gráfico de columnas agrupadas lado a lado que presente las ventas por trimestre en relación con las categorías de los productos.
+
+En "df", tenemos las columnas:
+
+trimestre: con las fechas en trimestres de las compras
+faturamento: con los valores de las ventas
+categoria: con las categorías de los productos vendidos. Vamos a utilizar solo las categorías "Papelería y oficina", "Libros" y "Alimentos y bebidas".
+Deseamos crear una visualización que presente las ventas por trimestre ("facturacion"), agrupando las categorías lado a lado en relación con el trimestre correspondiente a cada compra.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización."""
+
+El código generado por el prompt fue el siguiente:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df['facturacion'] = (df['precio_unitario'] * df['cantidad']) + df['envio']
+df['trimestre'] = df['fecha'].dt.to_period('Q')
+# Suponiendo que ya tienes el DataFrame df
+# Filtrar las categorías deseadas
+categorias_deseadas = ["Papelería y oficina", "Libros", "Alimentos y bebidas"]
+df_filtrado = df[df['categoria'].isin(categorias_deseadas)]
+# Pivotar los datos para tener los trimestres como índice y las categorías como columnas
+pivot_df = df_filtrado.pivot_table(index='trimestre', columns='categoria', values='facturacion', aggfunc='sum')
+# Crear el gráfico de columnas agrupadas
+pivot_df.plot(kind='bar', stacked=False, figsize=(10, 6))
+# Agregar etiquetas y título
+plt.xlabel('Trimestre')
+plt.ylabel('Ventas')
+plt.title('Ventas por Trimestre y Categoría')
+plt.xticks(rotation=45)  # Rotar las etiquetas del eje x para mejorar la legibilidad
+# Mostrar el gráfico
+plt.legend(title='Categoría')
+plt.tight_layout()
+plt.show()
+Copia el código
+Y su gráfica fue:
+
+2.png
+
+Ver opinión del instructor
+Opinión del instructor
+
+Continúa con tus estudios, y si tienes alguna duda, ¡no dudes en utilizar nuestro foro!
+
+*************************************************************************************
+09 Desafío: generando visualizaciones con respecto a la localización
+ Siguiente pregunta
+
+¿Vamos a practicar lo que aprendimos a partir del DataFrame df que generamos en el ejercicio de Manos a la Obra anterior?
+
+Has recibido una nueva demanda de Zoop para generar 2 nuevos visuales, uno relacionado con el perfil de las ventas y el otro con el perfil de los clientes de una región específica. Vamos a observar las dos situaciones y construir, con la ayuda de ChatGPT, los dos gráficos solicitados:
+
+Desafío 1:
+
+Construye y ejecuta un prompt en ChatGPT para generar, a partir de nuestra base de datos, un visual que muestre el facturación de las ventas por región. Recuerda que aquí la facturación se calcula multiplicando el valor unitario por la cantidad comprada y sumando el costo de envío.
+
+Desafío 2:
+
+Zoop quiere realizar una campaña en los estados de México y Puebla, por lo que necesita conocer el perfil de su público según el sexo biológico. Construye y ejecuta un prompt en ChatGPT para generar, a partir de nuestra base de datos, un visual que muestre la composición del público por sexo biológico en los estados de México y Puebla. Recuerda pedir que agrupe o apile los datos para la presentación.
+
+Si necesitas ayuda, una opción de solución de la actividad estará disponible en la sección “Opinión del instructor”.
+
+Ver opinión del instructor
+Opinión del instructor
+
+Existen diversas formas de solucionar esta actividad. A continuación, presentamos una sugerencia de solución para cada problema.
+
+Es importante destacar que, incluso utilizando los prompts sugeridos, el resultado puede variar un poco debido a la aleatoriedad de las IAs generativas cuando utilices tu cuenta.
+
+Podemos utilizar el siguiente prompt para la resolución del 1º desafío:
+
+Tenemos un DataFrame llamado "df" y queremos construir una visualización de gráfico de columnas que presente la facturación por región de Zoop.
+En "df", tenemos las siguientes columnas:
+- region: región del/de la cliente
+- precio_unitario: precio de una unidad del producto
+- cantidad: cantidad vendida del producto
+- envio: el valor del envío a ser pago en el total de la compra.
+Deseamos crear una visualización que presente la facturación de cada región, donde la facturación se calcula multiplicando el precio unitario por la cantidad y sumando el envío.
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+Copia el código
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Suponiendo que df sea tu DataFrame
+# Calcula la facturación para cada transacción
+df['facturacion'] = (df['precio_unitario'] * df['cantidad']) + df['envio']
+
+# Agrupa los datos por región y suma la facturación
+facturacion_por_region = df.groupby('region')['facturacion'].sum().reset_index()
+
+# Ordena el resultado para una mejor visualización
+facturacion_por_region = facturacion_por_region.sort_values(by='facturacion', ascending=False)
+
+# Creación del gráfico de columnas
+plt.figure(figsize=(10, 6))  # Ajusta el tamaño del gráfico
+plt.bar(facturacion_por_region['region'], facturacion_por_region['facturacion'], color='skyblue')  # Grafica barras
+plt.title('Facturación por Región')  # Añade título al gráfico
+plt.xlabel('Región')  # Añade etiqueta al eje X
+plt.ylabel('Facturación')  # Añade etiqueta al eje Y
+plt.show()  # Muestra el gráfico
+Copia el código
+La salida obtenida fue:
+
+3.png
+
+Podemos observar que ChatGPT generó un gráfico interesante, aunque sea la 1ª versión, todavía sin instrucciones para ajustar el visual. En este gráfico, tenemos la facturación por región en el año 2023, en orden descendente.
+
+Ahora, vamos al 2º desafío, donde necesitamos generar una visualización que muestre el público por sexo biológico en los estados de México y Puebla. Podemos utilizar el siguiente prompt para la resolución de estos procesos:
+
+Tenemos un DataFrame llamado "df" y queremos construir un gráfico de columnas apiladas que presente la cantidad de personas por sexo biológico en relación con los estados de "México" y "Puebla".
+
+En "df", tenemos las siguientes columnas:
+
+- estado: estado del/de la cliente. Utilizaremos únicamente los estados de "México" y "Puebla"
+- sexo_biologico: sexo biológico del/de la cliente
+
+Deseamos crear una visualización que presente la cantidad de personas agrupadas por sexo biológico en los estados que definimos.
+
+Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+Copia el código
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Filtrar el DataFrame para incluir solo los estados de "México" y "Puebla"
+df_filtrado = df[df['estado'].isin(['Estado de México', 'Puebla'])]
+
+# Contar la cantidad de personas por sexo biológico y estado
+contagem_por_sexo_e_estado = df_filtrado.groupby(['estado', 'sexo_biologico']).size().unstack(fill_value=0)
+
+# Crear el gráfico de columnas apiladas
+contagem_por_sexo_e_estado.plot(kind='bar', stacked=True, figsize=(10, 6))
+
+# Añadir título y etiquetas a los ejes
+plt.title('Cantidad de Personas por Sexo Biológico en los estados de México y Puebla')
+plt.xlabel('Estado')
+plt.ylabel('Cantidad de Personas')
+plt.xticks(rotation=0)  # Mantén las etiquetas de los estados en horizontal para mejor legibilidad
+
+# Mostrar la leyenda y el gráfico
+plt.legend(title='Sexo Biológico')
+plt.show()
+Copia el código
+La salida es:
+
+4.png
+
+ Discutir en el Foro
+**************************************************************************************+
+10 Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Seguir las premisas del proyecto construyendo la primera versión de los visuales con la ayuda de ChatGPT.
+Seleccionar los datos deseados y crear nuevas columnas para adaptarlos a lo que se solicita.
+Identificar los tipos de visuales, dónde pueden ser utilizados y cómo se presentan los datos.
+Escribir prompts para la generación de cada visual.
+Optimizar prompts para obtener mejores resultados con la herramienta de ChatGPT.
+Con la asistencia de ChatGPT logramos:
+
+Generar códigos para visuales de comparación y composición de datos.
+Crear visuales incluso sin especificar el tipo de gráfico, a través de instrucciones sobre las columnas de los datos existentes.
+Traducir los datos de los meses a un visual de gráfico de líneas mediante un diccionario.
+*************************************************************************************************
+03.Generando más visualizaciones
+01
+Proyecto del aula anterior
+ Siguiente pregunta
+
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
+***************************************************************************************************
