@@ -1699,5 +1699,169 @@ Se observa que, con la secuencia de instrucciones, el modelo aprende patrones y 
 ¿Hay algo en particular sobre lo que te gustaría profundizar o tienes alguna pregunta adicional?
 
 Copiar texto de Luri al portapapeles
-***************************************************************
-03 Buenas prácticas para el refinamiento de visualizaciones
+/////////////////////////////////////////////////////////////////////////
+03
+Buenas prácticas para el refinamiento de visualizaciones
+ Siguiente pregunta
+
+Ahora, Danielle ha creado otro visual para el análisis de datos de Serenatto - Café & Bistrô. En este caso, creó el siguiente gráfico con las Ventas del 2º semestre de 2023 de Serenatto:
+
+27.png
+
+Sabemos que este gráfico puede recibir algunos ajustes para facilitar la interpretación de los datos y mejorar la estética visual.
+
+Teniendo en cuenta lo que aprendimos sobre la creación y refinamiento de visuales, ¿cuáles de las siguientes alternativas son correctas?
+
+Alternativa correta
+Dado que hay pocos puntos en el gráfico, podemos eliminar la cuadrícula y el eje Y del visual, colocando los valores cerca de cada punto. Si los números son grandes, podemos representarlos en una escala determinada (por ejemplo, $2 mil).
+
+
+Esta es una de las acciones que podemos aplicar. Para gráficos con pocos puntos o elementos, esta simplificación puede facilitar el destaque de ciertas áreas del gráfico y acercar los valores a los elementos que los representan.
+
+Alternativa correta
+Podemos agregar pequeños textos alrededor de puntos de interés en el gráfico, con el fin de explicar o formular hipótesis sobre por qué se obtuvieron esos resultados, destacando y dirigiendo la atención del público hacia esos puntos.
+
+
+Esta es una de las acciones que podemos aplicar. Escribir pequeños textos puede proporcionar apoyo al análisis y entendimiento de los datos, ofreciendo breves ideas sobre lo que se está representando visualmente.
+
+Alternativa correta
+La representación de los ejes sigue las buenas prácticas tanto en el eje X como en el eje Y. En el eje Y, solo podemos ajustar los valores a pesos (MXN$), y en el eje X, podemos traducir los meses al español.
+
+
+Alternativa correta
+Dado que algunos de los meses escritos son largos, y aunque ajustemos su rotación, los rótulos pueden estar muy juntos unos de otros. Podemos invertir los ejes del gráfico, colocando los valores de tiempo en el 
+eje Y y los valores en el eje X.
+
+
+¡Enhorabuena, has acertado!
+ Disc
+*************************************************************+
+04
+Ajustando las visualizaciones de composición
+¡Hola! En esta clase, ajustamos dos visualizaciones de datos aplicando técnicas de storytelling. Primero, refinamos un gráfico de barras apiladas de ventas por trimestre y método de pago, ajustando colores, etiquetas y añadiendo una cuadrícula punteada para mejorar la visualización. Luego, transformamos un gráfico de pizza en un gráfico de dona para mostrar la proporción de usuarios en el programa de cashback, destacando visualmente a los participantes para resaltar la necesidad de aumentar la adhesión al programa. ¿Te gustaría que profundicemos en algún aspecto en particular?
+*************************************************************
+05
+Para saber más: tips para enriquecer la visualización
+ Siguiente pregunta
+
+Ahora que hemos elaborado los visuales del curso, podemos pensar en formas de enriquecerlos visualmente. En este "Para saber más", vamos conocer tres consejos para destacar información en gráficos. Notarás que tienen que ver con las propiedades de diseño de las que ya hablamos anteriormente.
+
+1. Contraste de colores
+
+Si en un gráfico una información específica merece más atención que las demás, asígnale un color que tenga un buen contraste en relación con los otros.
+
+29.png
+
+La barra del Item 5, aunque es pequeña en comparación con el conjunto, termina siendo más importante visualmente porque está en un color único y contrastado con las demás.
+
+2. Tamaño y estilo de la tipografía
+
+Ajustar estos dos parámetros dará más importancia al texto y atraerá la mirada. Además, permite organizar mejor la información.
+
+30.png
+
+Piensa en lo que realmente merece más atención y haz que sea más grande y con un peso más acentuado (respetando proporciones, en el caso del gráfico). Usar mayúsculas también es un buen recurso. En el ejemplo anterior, dimos más relevancia al título y al Item 5, creando incluso una mejor organización de la información.
+
+3. Elementos extra
+
+Por último, también puedes incorporar objetos para dar énfasis a la información en los gráficos.
+
+31.png
+
+Una vez más, piensa en el uso de los colores y la tipografía al agregar objetos al gráfico. Prioriza colores con buen contraste en relación con los elementos del gráfico.
+
+ Discutir en el F
+********************************************************************************************+
+06
+Ajustando las visualizaciones de distribución
+¡Hola! En esta clase, ajustamos las visualizaciones de distribución utilizando técnicas de storytelling. Trabajamos con dos gráficos: la distribución de las calificaciones de compra y la distribución del público por edad y sexo biológico.
+
+Para el primer gráfico, creamos un histograma y añadimos una caja de anotación con información relevante como el promedio de calificaciones, la calificación más común y su frecuencia.
+
+En el segundo gráfico, utilizamos un boxplot y proporcionamos indicaciones precisas sobre los cuantiles para generar anotaciones detalladas.
+
+Ambos gráficos fueron mejorados utilizando prompts específicos en ChatGPT, lo que nos permitió personalizar la apariencia y añadir información relevante para contar una historia efectiva con los datos.
+
+¿Te gustaría que profundizáramos en algún aspecto en particular o tienes alguna pregunta sobre el contenido de la clase?
+*************************+
+07
+Insertando anotaciones en un gráfico
+ Siguiente pregunta
+
+A continuación, tenemos un gráfico que representa la Distribución de edades de los clientes de Zoop en 2023, creado a partir de un prompt en ChatGPT.
+
+28.png
+
+Podemos destacar en el gráfico dos puntos relevantes:
+
+Las columnas con edades entre 30 y 45 años están destacadas con un tono de azul más oscuro que las otras;
+
+Hay una anotación en una caja de texto explicando los datos de ese rango de edad como los clientes más frecuentes.
+
+A partir del análisis de este gráfico y del segundo punto que destacamos, ¿qué parte del prompt pudo haber originado la anotación en el gráfico?
+
+Alternativa incorreta
+Adicione una anotación con el fondo en color GRIS_3 y el borde en color BLANCO dentro del área del gráfico. El texto de la anotación es "Nuestro público, en 2023, está más concentrado en el rango de\nedades de 30 a 45 años, evidenciando un grande apelo de la\nmarca para la generación Y (Millenials - nacidos entre 1981 y 1995)." en color GRIS_1 y tamaño 10. Agregue la caja de anotación con el texto en la posición xytext=(1000, 50) y xy=(1000, 50).
+
+
+Alternativa incorreta
+Adicione una anotación con el fondo en color BLANCO y el borde en color GRIS_3 dentro del área del gráfico. El texto de la anotación es "Nuestro público, en 2023, está más concentrado en el rango de\nedades de 30 a 45 años, evidenciando un grande apelo de la\nmarca para la generación Y (Millenials - nacidos entre 1981 y 1995)." en color AZUL_1 y tamaño 10. Agregue la caja de anotación con el texto en la posición xytext=(50, 1000) y xy=(50, 1000).
+
+
+Este es el prompt ideal, ya que detalla el mensaje que se describirá y todos los elementos que componen la caja de texto que se posicionará en el gráfico. El siguiente código es uno de los posibles generados por ChatGPT:
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Configurar el estilo de Seaborn
+sns.set_style("whitegrid")
+
+# Crear el histograma con Seaborn
+plt.figure(figsize=(10, 6))
+sns.histplot(data=df, x='edad', bins=range(15, 76, 5), color=AQUA_1)
+
+# Destacar las barras con edades entre 30 y 45 con el color AZUL_1
+plt.hist(df[(df['edad'] >= 30) & (df['edad'] < 45)]['edad'], bins=range(15, 76, 5), color=AZUL_1)
+
+# Configuraciones del gráfico
+plt.xticks(range(15, 76, 5), fontsize=10)
+plt.grid(False)
+plt.gca().spines[['top', 'right']].set_visible(False)
+
+# Agregar anotación
+plt.annotate("Nuestro público, en 2023, está más concentrado en el rango de\nedades de 30 a 45 años, evidenciando un grande apelo de la\nmarca para la generación Y (Millenials - nacidos entre 1981 y 1995).", 
+             xy=(50, 1000), xytext=(50, 1000), fontsize=10, backgroundcolor=BLANCO, color=AZUL_1, 
+             bbox=dict(facecolor=BLANCO, edgecolor=GRIS_3, boxstyle='round'), arrowprops=dict(arrowstyle='-'))
+
+# Agregar etiquetas y título
+plt.xlabel('Edad', fontsize=12)
+plt.ylabel('Frecuencia', fontsize=12)
+plt.title('Distribución de las edades de los clientes', fontsize=14)
+
+# Mostrar el histograma
+plt.show()
+Copia el código
+Alternativa incorreta
+Adicione una anotación con el fondo en color BLANCO y el borde en color GRIS_3 dentro del área del gráfico. El texto de la anotación es "Nuestro público, en 2023, está más concentrado en el rango de edades de 30 a 45 años, evidenciando un grande apelo de la marca para la generación Y (Millenials - nacidos entre 1981 y 1995)." en color AZUL_1 y tamaño 10. Agregue la caja de anotación con el texto en la posición xytext=(50, 1000) y xy=(50, 1000).
+
+
+Alternativa incorreta
+Adicione una anotación dentro del área del gráfico. El texto de la anotación es "Nuestro público, en 2023, está más concentrado en el rango de\nedades de 30 a 45 años, evidenciando un grande apelo de la\nmarca para la generación Y (Millenials - nacidos entre 1981 y 1995).". Agregue la caja de anotación con el texto en la posición xytext=(50, 1000) y xy=(50, 1000).
+
+
+¡Enhorabuena, has acertado!
+ Discutir en el Foro
+ Siguiente pr
+**************************************************************+
+08
+Exportando los gráficos
+¡Hola! En esta clase, aprendiste cómo exportar las visualizaciones de datos que creaste en imágenes PNG para poder utilizarlas en un informe. El proceso consiste en transformar cada una de las funciones que generan los gráficos en imágenes, asegurándote de que el borde de la imagen quede lo más estrecho posible para evitar márgenes en blanco innecesarios.
+
+Para lograr esto, se te proporcionó un prompt que te guía en la creación de una función llamada exportar_grafico. Esta función toma como parámetro el nombre de la función que genera el gráfico y guarda la imagen con un nombre específico, utilizando la extensión ".png".
+
+Luego, aplicaste esta función a cada uno de los gráficos que generaste en clases anteriores, como metodo_pago, ventas_mensuales, facturacion_por_categoria, ventas_por_trimestre, proporcion_cashback, distribucion_calificaciones y boxplot_edad_sexo. Al ejecutar el código, se generaron todas las imágenes en el entorno de trabajo, listas para ser descargadas y utilizadas en tu informe.
+
+¿Te gustaría que te explique algún punto en más detalle o tienes alguna otra pregunta?
+
+Copiar texto de Luri al portapapeles
+**********************************************************************************+
