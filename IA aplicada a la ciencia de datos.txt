@@ -1159,3 +1159,545 @@ Proyecto del aula anterior
 
 Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
 *****************************************************************************
+02
+Definiendo los colores del proyecto
+¡Hola! En esta clase, exploramos la importancia de definir los aspectos estéticos de las gráficas, enfocándonos en los colores.
+
+Estos son los puntos clave que cubrimos:
+
+Percepción humana de los colores: Cada color evoca emociones y significados diferentes, por lo que es crucial elegir los colores correctos para transmitir la información de manera clara y eficaz, respetando la identidad visual de ZOOP.
+Accesibilidad: Es importante garantizar que las visualizaciones sean inclusivas y fáciles de entender para todos, incluyendo personas con daltonismo.
+Inteligencia artificial y la elección de colores: Aunque la IA puede analizar datos y reconocer patrones, carece del criterio humano para elegir colores significativos que garanticen la accesibilidad.
+Experiencia visual: Debemos asegurarnos de que la audiencia comprenda los gráficos y que no haya conflictos de colores que perjudiquen la claridad del mensaje.
+En resumen, la elección de colores es fundamental para crear visualizaciones de datos efectivas, accesibles y que transmitan la información de manera clara y significativa. ¿Te gustaría que profundizáramos en alguno de estos puntos?
+*****************************************************************
+03
+Para saber más: tipos de gráficos
+ Siguiente pregunta
+
+En esta clase, vamos a hablar mucho sobre la creación de visuales del curso y practicar técnicas para trabajar en la estética de los gráficos. Por lo tanto, nada mejor que revisar tres propiedades fundamentales del diseño para garantizar una buena comunicación visual. ¿Vamos allá?
+
+1. Uso de los colores
+
+El uso correcto de los colores en proyectos visuales es importante para garantizar legibilidad y uniformidad en los materiales, y para ello, deben observarse dos parámetros: contraste y consistencia.
+
+Contraste
+
+El contraste es simplemente la diferencia entre dos cosas en un contexto comparativo. En la práctica, evaluamos el contraste relacionando colores, ya que no tiene sentido en un solo color. Contrastes más fuertes significan colores más diferentes entre sí, mientras que contrastes más débiles denotan colores más similares. Aquí es importante tener cuidado con esta proximidad porque los colores similares dificultan la comprensión de los gráficos.
+
+18.png
+
+Compara los dos gráficos anteriores. Observa cómo en el de la izquierda el contraste de colores es menor y, por lo tanto, la separación entre las partes de la pizza es menos visible. Usar un solo color como guía no es problemático, pero asegúrate de proporcionar suficiente contraste entre todos los tonos elegidos.
+
+Consistencia
+
+En un proyecto con muchos gráficos debe existir un patrón en el uso de los colores. De lo contrario, los materiales no parecen formar parte del mismo conjunto y transmiten una sensación de falta de profesionalismo, sugiriendo que fueron hechos sin seguir un patrón bien definido.
+
+19.png
+
+Observa cómo los gráficos a la derecha, que siguen una misma orientación cromática, tienen un acabado más profesional.
+
+2. Tipografía
+
+Los gráficos brindan una disposición más visual a la información textual y ofrecen una presentación más clara de los datos que el texto corrido. Aun así, los gráficos estarán acompañados de algún texto, como títulos y leyendas, y deben ser legibles. Para ello, deben considerarse dos atributos relacionados con la tipografía:
+
+Tamaño: Las palabras deben tener un tamaño mínimo para que se puedan leer sin dificultades. En trabajos impresos, usa al menos 10 pt y 20 pt para gráficos en presentaciones.
+
+Estilo: Evita tipografías muy ornamentadas, cursivas o con características excesivamente acentuadas, ya que tienden a tener una legibilidad deficiente en dimensiones menores y en extensiones mayores de texto.
+
+20.png
+
+En caso de duda, da prioridad a las familias tipográficas más simples, como en el gráfico de la derecha.
+
+3. Jerarquía de la información
+
+¿Alguna vez has estado en una conversación en la que todos hablan al mismo tiempo y nadie se entiende? Lo mismo sucede en la comunicación visual si todo en la pantalla o en el papel quiere ser destacado al mismo tiempo: es necesario definir solo uno o dos elementos. De esta manera, colores y texto, especialmente, deben ser manipulados de manera que no saturen al lector con información.
+
+21.png
+
+Evita seleccionar muchos colores "fuertes" y no exageres con el tamaño y el peso del texto. Observa cómo el gráfico de la izquierda está mucho más "saturado" visualmente, con todos los elementos "hablando" al mismo tiempo. Busca equilibrar más estos elementos visuales, como se hizo en el gráfico de la derecha, donde los colores y la tipografía se han retrabajado.
+*************************************************************************
+04
+Iniciando el Storytelling
+¡Hola! En esta clase, aprendimos cómo mejorar nuestros gráficos utilizando técnicas de storytelling e inteligencia artificial, enfocándonos en la identidad visual de ZOOP.
+
+Aquí están los puntos clave:
+
+Gráfico de Métodos de Pago: Se tomó el gráfico inicial de los métodos de pago y se mejoró visualmente.
+Código Python: Se utilizó matplotlib.pyplot para crear un gráfico de barras que muestra la cantidad de cada método de pago. Se aplicaron colores y estilos específicos para seguir la identidad visual de ZOOP.
+Personalización:
+El fondo del gráfico y la figura se establecieron en color gris 1.
+Las barras se colorearon en rojo 1.
+Se añadió un título en gris 5 con tamaño de fuente 18.
+Las etiquetas de los ejes x e y se definieron en azul 1 con tamaño de fuente 12.
+Se eliminaron los bordes superior, derecho e izquierdo del gráfico.
+Se mostró el total de cada método de pago encima de cada columna en color azul 1 y tamaño 12.
+Limpieza Visual: Se eliminaron elementos distractores y se ajustó el diseño para que se adapte a la identidad visual de ZOOP.
+Resultado: Se obtuvo un gráfico limpio y llamativo que muestra claramente la cantidad de cada método de pago utilizado, listo para ser exportado e incluido en un informe de ventas.
+En resumen, la clase se centró en cómo mejorar la visualización de datos mediante la personalización y la aplicación de técnicas de storytelling, utilizando Python y la biblioteca matplotlib. El objetivo es crear gráficos más claros y atractivos que se ajusten a la identidad visual de la empresa.
+
+¿Te gustaría que repasemos algún punto en específico o tienes alguna pregunta?
+//////////////////////////////////////////////////////////////////////
+05
+¿Cómo refinar el gráfico?
+ Siguiente pregunta
+
+Regresamos a nuestro problema con Daniela y los visuales para Serenatto - Café & Bistrô. Esta vez, ella recibió la tarea de presentar los números trimestrales de ventas de tres productos de la filial: “Gnocchi”, “Pizza Margherita” y “Ratatouille”. Estos productos se añadieron por primera vez al menú a partir del comienzo del 2º semestre de 2023.
+
+Para acomodar todos los datos en un solo gráfico, Danielle optó por crear un gráfico de columnas agrupadas como el que se muestra a continuación:
+
+22.png
+
+Ya hemos notado algunas mejoras que se pueden realizar en este visual, ¿verdad?
+
+Teniendo en cuenta lo que hemos aprendido sobre las técnicas de visualización, ¿cuáles de las siguientes opciones traen buenas ideas para el refinamiento del visual creado por Daniela?
+
+Alternativa correta
+Cambiar el orden de los valores de mayor a menor, ya que tiene más sentido observar los datos en orden creciente de valor.
+
+
+Alternativa correta
+Eliminar la leyenda y colocar el nombre de cada producto en el gráfico, eliminando la necesidad de añadir un elemento más al gráfico.
+
+
+Alternativa correta
+Ajustar las etiquetas del eje X con los datos de los trimestres para que estén en horizontal, facilitando la lectura de los trimestres.
+
+
+Esta es una de las acciones que podemos aplicar. La lectura de los datos del trimestre de manera vertical puede resultar incómoda para quienes leen el gráfico, ya que estamos acostumbrados a leer en horizontal. Adaptar esta orientación al visual es primordial.
+
+Alternativa correta
+Ajustar el eje Y para que comience en 0, evitando interpretaciones erróneas al comparar los productos.
+
+
+Esta es una de las acciones que podemos aplicar. Cuando comparamos valores, casi siempre es necesario comenzar desde 0 en el eje Y, ya que evita distorsiones en la representación y falsas interpretaciones de los datos.
+
+¡Enhorabuena, has acertado!
+***************************************************
+06
+Para saber más: elementos de un gráfico en Matplotlib
+ Siguiente pregunta
+
+En el video anterior, creamos un prompt que alteró una serie de elementos dentro de nuestro visual, dándole una nueva apariencia siguiendo las orientaciones para la creación de un visual de Zoop en términos de colores, etiquetas, títulos, datos, entre otros. Algunos de los elementos los especificamos para la IA de ChatGPT y otros solo proporcionamos algunas instrucciones que ayudaron a guiar dónde y qué queremos cambiar.
+
+Se pudo notar que el código generado por ChatGPT produjo un visual bastante cercano al deseado sin aumentar drásticamente el tamaño del código, manteniéndolo entendible. Pero, ¿cuáles son los elementos visuales que alteramos y vamos a alterar? ¿Cómo saber qué hace cada uno?
+
+Vamos a utilizar ChatGPT para responder a estas dudas.
+
+Prompt:
+
+Crea un texto que hable brevemente sobre los elementos de un gráfico en la biblioteca Matplotlib, como, por ejemplo, xticks(), yticks(), xlabel(), ylabel(), text(), annotate, entre otros. Da ejemplos para cada buena práctica orientada a un proyecto simple de Data Science con Python.
+
+La respuesta dada por ChatGPT es la siguiente:
+
+La biblioteca Matplotlib es una de las herramientas más populares y poderosas para la creación de gráficos y visualizaciones de datos en Python. Ofrece una amplia gama de funcionalidades y elementos que pueden ser personalizados para mejorar la legibilidad y la presentación de las visualizaciones de datos. Aquí están algunos de los elementos clave que puedes utilizar al crear gráficos con Matplotlib, acompañados de buenas prácticas y ejemplos orientados a un proyecto simple de Data Science.
+
+1. xticks y yticks
+
+Estas funciones se usan para personalizar los ticks de los ejes X e Y. Ajustar estos elementos puede mejorar la legibilidad de los gráficos, especialmente cuando se trabaja con datos que tienen escalas grandes o pequeñas, o cuando los valores están densamente distribuidos. Ejemplo: plt.xticks(range(0, 101, 10)) define los ticks del eje X para valores de 0 a 100, con intervalos de 10.
+
+2. xlabel y ylabel
+
+Son etiquetas para los ejes X e Y, respectivamente. Son esenciales para indicar lo que representa cada eje. Nombra tus ejes con etiquetas claras e informativas. Esto hace que el gráfico sea comprensible sin necesidad de consultar el contexto externo. Ejemplo: plt.xlabel('Tiempo (años)') y plt.ylabel('Población (millones)').
+
+3. Título (title) y subtítulos
+
+Agrega un título al gráfico, proporcionando una visión general inmediata de lo que el gráfico está mostrando. Los subtítulos pueden usarse para proporcionar información adicional o contextual. Usa un título descriptivo que pueda reducir la necesidad de etiquetas y considera los subtítulos para detalles adicionales, como la fuente de los datos o observaciones específicas. Ejemplo: plt.title('Crecimiento Poblacional a lo Largo del Tiempo').
+
+4. Leyenda (legend)
+
+La leyenda ayuda a identificar diferentes series o categorías dentro de un gráfico. Es crucial cuando un gráfico contiene múltiples líneas, barras u otros elementos visuales. Usa leyendas claras y coloca la leyenda de manera que no obstruya los datos. plt.legend(loc='best') elige automáticamente la mejor ubicación para la leyenda. Ejemplo: plt.legend(['Producto A', 'Producto B']).
+
+5. Anotación (text y annotate)
+
+La anotación permite agregar textos explicativos en puntos específicos del gráfico, lo que puede ser útil para resaltar características o puntos de datos importantes. text permite agregar texto en cualquier parte del gráfico, mientras que annotate se usa para añadir anotaciones con la opción de incluir una flecha que apunte a una parte específica del gráfico. Usa plt.annotate() para agregar anotaciones que aclaren puntos de datos inusuales o tendencias notables. Especifica la ubicación de la anotación y el punto de datos a ser anotado. Ejemplo: plt.annotate('Pico Máximo', xy=(2020, 500), xytext=(2021, 600), arrowprops=dict(facecolor='black')) destaca un pico en el gráfico.
+
+6. Rejilla (grid)
+
+Agrega una rejilla al gráfico, lo que puede mejorar significativamente la legibilidad al estimar valores. Las líneas de rejilla ayudan a leer los gráficos al proporcionar líneas de referencia que facilitan la correlación de los valores de los datos con los ejes. Activa la rejilla cuando tengas muchos puntos de datos o cuando necesites facilitar la comparación de valores. Ejemplo: plt.grid(True) habilita la visualización de la rejilla en el gráfico.
+
+Utilizar estos elementos adecuadamente puede mejorar significativamente la calidad de tus visualizaciones de datos, haciéndolas no solo más atractivas visualmente, sino también más informativas y fáciles de entender. En proyectos de Data Science, donde la comunicación efectiva de los resultados es esencial, dominar estos elementos de Matplotlib es una habilidad valiosa.
+
+¿Te gustó la respuesta de ChatGPT?
+
+Nos proporcionó una buena explicación sobre los diferentes elementos de un gráfico en la biblioteca Matplotlib de Python y señaló ejemplos de cómo podemos crearlos dentro del código. ¿Qué te parece si te sumerges en la biblioteca de Matplotlib para aprender más sobre estos y otros elementos para mejorar tu visual?
+************************************************************************************+
+07
+Añadiendo texto a nuestros gráficos
+¡Hola! En esta clase, aprendimos cómo mejorar la narrativa de nuestros gráficos añadiendo texto informativo. Aquí tienes una analogía para entenderlo mejor:
+
+Imagina que tu gráfico es una película. Al principio, tienes las imágenes (los datos visualizados), pero falta algo para que la historia sea completa. Añadir texto a tu gráfico es como añadir diálogos o subtítulos a la película. Estos elementos textuales ayudan a la audiencia a entender mejor la trama y a conectar con la historia.
+
+En la clase, usamos ChatGPT para crear un texto que resume un hallazgo importante en los datos: el porcentaje de clientes que usan tarjeta de crédito o transferencia. Luego, colocamos este texto directamente en el gráfico, como un subtítulo que resalta una escena clave.
+
+Al igual que un buen diálogo puede hacer que una película sea más impactante, añadir texto informativo a tu gráfico puede aumentar significativamente la relevancia de los datos y proporcionar mayor información a la audiencia. ¡Espero que esta analogía te ayude a visualizar el concepto! ¿Te gustaría que te proporcionara algún ejemplo o ejercicio para practicar esta técnica?
+
+Copiar texto de Luri al portapapeles
+/////////////////////////////////////////////////////////////////////////////////////////////
+08
+Destacando una columna en los datos
+ Siguiente pregunta
+
+Ahora, Daniela ha comenzado otro análisis de datos para Serenatto - Café & Bistrô. En esta tarea, creó un gráfico con los métodos de pago más utilizados en el 2º semestre de 2023 en el restaurante, con la ayuda de ChatGPT, usando el siguiente prompt:
+
+""" Tenemos un DataFrame llamado "df" y queremos construir un gráfico de columnas que muestre cuáles métodos de pago fueron los más utilizados en Serenatto Café & Bistrô. Para ello, tenemos la columna "metodo_pago" con los 4 tipos de pago utilizados en la compra.
+
+El título de la figura es "Métodos de pago más utilizados en el 2º semestre de 2023" con tamaño 14 y las columnas deben estar en color "honeydew", excepto la columna del método de pago más utilizado, que debe ser de color "seagreen". Las etiquetas del eje y (yticks) deben ser excluidas, al igual que las etiquetas de los ejes x e y (xlabel y ylabel), y las etiquetas del eje X (xticks) deben tener tamaño 12. Todos los bordes deben ser excluidos.
+
+Finalmente, muestra el total de cada método de pago sobre cada columna, con tamaño 12, donde el valor mayor debe estar en negrita. Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización. """
+
+Podemos observar a través del prompt que solo la columna con el mayor valor tendrá un destaque tanto en el color de la barra como en el valor. Este comportamiento puede ser visto en el visual generado por el código retornado por ChatGPT:
+
+23.png
+
+Considerando el prompt escrito arriba y el visual generado por Daniela, ¿cuál de los códigos abajo es una posible respuesta del ChatGPT al visual que construyó?
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+metodos_pago = df['metodo_pago'].value_counts()
+metodo_mas_utilizado = metodos_pago.idxmax()
+colores = ['honeydew'] * len(metodos_pago)
+colores[metodos_pago.index.get_loc(metodo_mas_utilizado)] = 'seagreen'
+
+plt.figure(figsize=(10, 6))
+plt.bar(metodos_pago.index, metodos_pago.values, color=colores)
+
+for i, valor in enumerate(metodos_pago.values):
+    plt.text(i, valor + 20, str(valor), ha='center', fontsize=12, weight='bold' if valor == metodos_pago.max() else 'normal')
+
+plt.title('Métodos de pago más utilizados en el 2º semestre de 2023', fontsize=14)
+plt.xticks(fontsize=12)
+plt.yticks([])
+plt.ylim(0, 3000)
+plt.xlabel('')
+plt.ylabel('')
+plt.gca().spines[['top', 'right','left', 'bottom']].set_visible(False)
+plt.show()
+
+Este es el código correcto y posible de ser descrito por ChatGPT, ya que genera un gráfico de columnas destacando el método de pago más utilizado (Tarjeta de crédito).
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+metodos_pago = df['metodo_pago'].value_counts()
+cores = ['honeydew', 'seagreen']
+
+plt.figure(figsize=(10, 6))
+plt.bar(metodos_pago.index, metodos_pago.values, color=cores)
+
+for i, valor in enumerate(metodos_pago.values):
+    plt.text(i, valor + 20, str(valor), ha='center', fontsize=12, weight='bold' if valor == metodos_pago.max() else 'normal')
+
+plt.title('Métodos de pago más utilizados en el 2º semestre de 2023', fontsize=14)
+plt.xticks(fontsize=12)
+plt.yticks([])
+plt.ylim(0, 3000)
+plt.xlabel('')
+plt.ylabel('')
+plt.gca().spines[['top', 'right','left', 'bottom']].set_visible(False)
+plt.show()
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+metodos_pago = df['metodo_pago'].value_counts()
+
+plt.figure(figsize=(10, 6))
+plt.bar(metodos_pago.index, metodos_pago.values)
+
+for i, valor in enumerate(metodos_pago.values):
+    plt.text(i, valor + 20, str(valor), ha='center', fontsize=12, weight='bold' if valor == metodos_pago.max() else 'normal')
+
+plt.title('Métodos de pago más utilizados en el 2º semestre de 2023', fontsize=14)
+plt.xticks(fontsize=12)
+plt.yticks([])
+plt.ylim(0, 3000)
+plt.xlabel('')
+plt.ylabel('')
+plt.gca().spines[['top', 'right','left', 'bottom']].set_visible(False)
+plt.show()
+
+Alternativa incorreta
+import matplotlib.pyplot as plt
+
+metodos_pago = df['metodo_pago'].value_counts()
+metodo_mais_utilizado = metodos_pago.idxmax()
+colores = ['honeydew'] * len(metodos_pago)
+colores[metodos_pago.index.get_loc(metodo_mais_utilizado)] = 'seagreen'
+
+plt.figure(figsize=(10, 6))
+plt.bar(metodos_pago.index, metodos_pago.values, color=colores)
+
+for i, valor in enumerate(metodos_pago.values):
+    plt.text(i, valor + 20, str(valor), ha='center', fontsize=12, weight='bold')
+
+plt.title('Métodos de pago máss utilizados en el 2º semestre de 2023', fontsize=14)
+plt.xticks(fontsize=12)
+plt.yticks([])
+plt.ylim(0, 3000)
+plt.xlabel('')
+plt.ylabel('')
+plt.gca().spines[['top', 'right','left', 'bottom']].set_visible(False)
+plt.show()
+
+¡Enhorabuena, has acertado!
+**************************************************************
+
+09
+Añadiendo más elementos visuales
+
+¡Hola! En esta clase, aprendimos cómo mejorar la visualización de datos utilizando técnicas de storytelling con IA. Aquí tienes un resumen de los puntos clave:
+
+Añadir Elementos Visuales Adicionales:
+
+Se exploró cómo enriquecer los gráficos con elementos visuales adicionales, como textos informativos y círculos destacados, para resaltar puntos clave en los datos.
+Consistencia en la Biblioteca:
+
+Se enfatizó la importancia de mantener la consistencia en la biblioteca utilizada para la generación de gráficos. Inicialmente, se usaron Matplotlib y Seaborn, pero para ajustes adicionales, se recomendó usar solo Matplotlib para facilitar el trabajo.
+Ajustes con Prompts en Chat GPT:
+
+Se utilizó chat gpt para generar código que permita realizar ajustes específicos en los gráficos, como cambiar el formato de las fechas y añadir elementos visuales como círculos en puntos de interés.
+Modificación de Ticks y Formato de Eje:
+
+Se ajustaron los ticks en el eje para facilitar la lectura de las dimensiones y se modificó el formato de los meses para mostrar abreviaturas en español.
+Añadir Círculos Destacados:
+
+Se dibujaron círculos en puntos específicos del gráfico para resaltar los meses con mayor volumen de ventas, y se plantearon hipótesis sobre las razones detrás de estos picos (ej. Día de las Madres en mayo, Black Friday en noviembre, etc.).
+Recomendaciones Finales:
+
+Se recomendó investigar más a fondo el conjunto de datos para extraer conclusiones más detalladas y se sugirió convertir las visualizaciones en funciones para facilitar la exportación de las gráficas.
+Espero que este resumen te sea útil. ¿Hay algo más en lo que te pueda ayudar o alguna pregunta específica que tengas sobre la clase?
+
+Copiar texto de Luri al portapapeles
+////////////////////////////////////////////////////////////////////////////////
+10
+Destacando puntos en los gráficos
+ Siguiente pregunta
+
+Juan está entrenando cómo refinar los gráficos generados a lo largo de sus estudios de la base con los datos del PIB y valores agregados de la agropecuaria de los estados brasileños para enriquecer su portafolio. Ahora, ha separado los datos solo del Valor Agregado de la Agropecuaria por año en el estado de Bahia. El DataFrame (agro_ba) que generó estos datos es el siguiente:
+
+año	va_agropecuaria
+0	2002	6.612125e+09
+1	2003	7.611626e+09
+2	2004	8.695861e+09
+3	2005	7.732466e+09
+4	2006	7.958330e+09
+5	2007	9.836862e+09
+6	2008	1.024886e+10
+7	2009	1.060579e+10
+8	2010	1.070934e+10
+9	2011	1.188632e+10
+10	2012	1.277921e+10
+11	2013	1.310210e+10
+12	2014	1.548399e+10
+13	2015	1.785443e+10
+14	2016	1.653381e+10
+15	2017	1.582685e+10
+16	2018	1.909591e+10
+17	2019	1.748812e+10
+18	2020	2.800694e+10
+Juan produjo un gráfico de líneas con los datos mediante un prompt en ChatGPT que podemos observar a continuación:
+
+24.png
+
+Podemos observar, sin embargo, a continuación, solo el primer párrafo del prompt pasado por Juan a ChatGPT para la creación de este visual:
+
+""" Tenemos un DataFrame llamado "agro_ba" y queremos construir un gráfico de líneas que presente los Valores Agregados de la Agropecuaria de Mexico entre 2002 y 2020. Las columnas de "agro_ba" son "ano" con los años de los datos de 2002 a 2020 y "va_agropecuaria" con los valores agregados de la agropecuaria en el estado de Mexico Ajuste los xticks para range(2002,2021, 2) ... """
+
+Partiendo de las ideas del primer párrafo del prompt y el visual descrito anteriormente, ¿cuál de los textos a continuación podría ser el segundo párrafo que João creó para la construcción del gráfico de líneas?
+
+Alternativa incorreta
+El título de la figura es "Valores Agregados del sector agropecuario en el estados de Bahia (2002-2020)" con tamaño 16. Las etiquetas de los ejes x e y (yticks y xticks) deben tener tamaño 12, así como las etiquetas de los ejes x e y (xlabel y ylabel). Los bordes del gráfico en la parte superior y el lado derecho deben ser eliminados. Destaca los valores de "va_agropecuaria" en los puntos de los años 2015, 2018 y 2020 con el color "red" y tamaño 100. En la posición x = 2002 y y = 2e10, agrega el siguiente texto con tamaño 10: f"Podemos notar una tendencia de crecimiento en el valor agregado (VA) del sector agropecuario en Bahia, con destaque en los años 2015, 2018 y 2020.". Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Alternativa incorreta
+El título de la figura es "Valores Agregados de la Agropecuaria de Bahia (2002-2020)" con tamaño 16. Destaca los valores de "va_agropecuaria" en los puntos de los años 2015, 2018 y 2020 con el color "red" y tamaño 100. En la posición x = 2002 y y = 2e10, agrega el siguiente texto con tamaño 10: f"Podemos notar una tendencia de crecimiento\nen el VA de la Agropecuaria en Bahia, con destaque\nen los años de $\bf{2015}$, $\bf{2018}$ y $\bf{2020}$". Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Alternativa incorreta
+El título de la figura es "Valores Agregados del sector agropecuario en el estados de Bahia (2002-2020)" con tamaño 16. Las etiquetas de los ejes x e y (yticks y xticks) deben tener tamaño 12, así como las etiquetas de los ejes x e y (xlabel y ylabel). Los bordes del gráfico en la parte superior y el lado derecho deben ser eliminados. Destaca los valores de "va_agropecuaria" en los puntos de los años 2015, 2018 y 2020 con el color "red" y tamaño 100. En la posición x = 2002 y y = 2e10, agrega el siguiente texto con tamaño 10: f"Podemos notar una tendencia de crecimiento en el valor\nagregado (VA) del sector agropecuario en Bahia, con\ndestaque en los años $\bf{2015}$, $\bf{2018}$ y $\bf{2020}$". Utiliza las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+
+Este es el prompt ideal, ya que especifica todos los procesos necesarios para lograr el comportamiento deseado, requiriendo la generación de un código para el visual con los refinamientos tanto de los tamaños de los elementos, como etiquetas, textos y destacados.
+*************************************************************************************+
+11
+Desafío: refinando las visualizaciones
+ Siguiente pregunta
+
+Zoop ha seleccionado 2 de los visuales creados para formar parte del informe con la narración de datos de la empresa. Se ha definido que se utilizarán los visuales con el facturamiento por región en 2023 y el de personas pre-registradas en Zoop Pay. Refinaremos ambos visuales siguiendo las instrucciones a continuación y la paleta de colores de la e-commerce, alterándolos con la ayuda de ChatGPT:
+
+Desafío 1:
+
+Construye y ejecuta un prompt en ChatGPT para refinar el visual que presenta el facturamiento de las ventas por región. Las instrucciones para el refinamiento son las siguientes:
+
+Fondo de la figura y del área del gráfico en el color GRIS_1
+Color de las columnas en AQUA_1 (si deseas destacar solo una, puedes recurrir a AQUA_3, por ejemplo)
+Tamaño de la figura de (16,9)
+Cambia el título de la figura a un tamaño de 18 y color GRIS_5, ajusta las etiquetas y rótulos del eje x e y, cuando existan, a un tamaño 12 y color AZUL_1
+Elimina el máximo de bordes posible y ajusta los datos para que se presenten en las barras en orden de millones, con color AZUL_1 y tamaño 12
+Observación 1: Todas las variables que representan los colores en las instrucciones están en una celda en la pestaña Paleta de Colores dentro del notebook Desafíos de la Clase 04.
+
+Observación 2: Es probable que al ejecutar los prompts, ChatGPT sugiera colores para las variables y modificaciones en los códigos que llaman al DataFrame deseado. Presta mucha atención para eliminar la nueva definición de colores y ajustar el DataFrame según lo que has hecho en actividades anteriores.
+
+Desafío 2:
+
+Construye y ejecuta un prompt en ChatGPT para refinar el visual que presenta la proporción de personas pre-registradas en Zoop Pay. Las instrucciones para el refinamiento son las siguientes:
+
+Fondo de la figura y del área del gráfico en el color GRIS_1.
+Color de las porciones: AZUL_1 para "Sí" y GRIS_3 para "No".
+Tamaño de la figura de (6,6).
+Cambia el título de la figura a un tamaño de 18 y color GRIS_5.
+Añade etiquetas en las porciones con tamaño 12 y los porcentajes también con tamaño 12 y en negrita. Los porcentajes deben estar en color BLANCO y las etiquetas de las porciones en el mismo color que las porciones.
+Ajusta la rosca para que su ancho sea de 0.4 y los porcentajes de las porciones estén en la posición 0.8 en relación al centro.
+Evita explosiones de porciones y efectos que dificulten el análisis del gráfico.
+Si necesitas ayuda, habrá una opción de solución disponible en la sección "Opinión del instructor/a".
+
+Ver opinión del instructor
+Opinión del instructor
+
+Existen diversas maneras de solucionar esta actividad. A continuación presentamos una sugerencia de solución para cada problema.
+
+Es importante destacar que, aunque se utilicen los prompts sugeridos, el resultado puede variar un poco debido a la aleatoriedad de las IAs generativas cuando uses tu cuenta.
+
+Podemos utilizar el siguiente prompt para la resolución del 1º desafío:
+
+Vamos a refinar el gráfico que hicimos de facturación por región. Debe seguir la identidad visual de Zoop, con el fondo de la figura y del gráfico en color GRIS_1, las columnas en color AQUA_1, y el tamaño de la figura debe ser de (16, 9).
+
+El título de la figura será "Facturación por Región en 2023" con tamaño 18 y su color GRIS_5.
+
+Las etiquetas del eje y (yticks) deben ser eliminadas, así como las etiquetas de los ejes x e y (xlabel y ylabel). Las etiquetas del eje X (xticks) deben tener un tamaño de 12 con el color AZUL_1. Retira todas las bordes del gráfico. Muestra el total de cada facturación encima de cada columna en el formato "MXN$ valor M", con el valor dividido por 1 millón (1e6) y con un decimal. El texto debe ser de color AZUL_1 y tamaño 12.
+
+Usa las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import matplotlib.pyplot as plt
+
+# Ejemplo de datos agrupados por región y suma de la facturación
+# facturacion_por_region = df.groupby('region')['facturacion'].sum().reset_index()
+
+# Ordenación de los datos para una mejor visualización (suponiendo que los datos ya estén preparados)
+# facturacion_por_region = facturacion_por_region.sort_values(by='facturacion', ascending=False)
+
+# Configuraciones generales de la figura
+plt.figure(figsize=(16, 9), facecolor=GRIS_1)
+plt.gca().set_facecolor(GRIS_1)  # Configuración del fondo del gráfico
+
+# Creación del gráfico de columnas
+plt.bar(facturacion_por_region['region'], facturacion_por_region['facturacion'] / 1e6, color=AQUA_1)
+plt.title('Facturación por Región en 2023', color=GRIS_5, fontsize=18)
+plt.yticks([])  # Eliminación de las etiquetas del eje y
+plt.ylabel('')  # Eliminación de la etiqueta del eje y
+plt.xticks(fontsize=12, color=AZUL_1)
+plt.box(False)  # Eliminación de los bordes del gráfico
+
+# Añade el total de la facturación encima de cada columna
+for index, value in enumerate(facturacion_por_region['facturacion']):
+    plt.text(index, value / 1e6 + 0.1, f'MXN$ {value / 1e6:.1f}M', color=AZUL_1, ha='center', fontsize=12)
+
+# Muestra el gráfico
+plt.show()
+Copia el código
+Salida:
+
+25.png
+
+El gráfico generado muestra que las regiones Centro y Noroeste tienen las mayores facturaciones de Zoop en relación con las otras regiones de México en 2023. Podría ser interesante añadir alguna interpretación de este dato o destacar algún punto para guiar la lectura de la imagen.
+
+Ahora, vamos al 2º desafío, en el que necesitamos mejorar un gráfico que muestra la proporción de personas registradas en Zoop Pay. Podemos utilizar el siguiente prompt para refinar la visualización:
+
+Vamos a refinar el gráfico de rosquilla que producimos para mostrar la proporción de usuarios que realizaron el prerregistro en Zoop Pay.
+
+Nuestro gráfico debe seguir la identidad visual de Zoop, con el fondo de la figura y del gráfico en color GRIS_1, la porción con valor "No" en color GRIS_3 y la porción con valor "Sí" en color AZUL_3. El tamaño de la figura será de (6, 6).
+
+El título de la figura será "¿Prerregistrado(a) en Zoop Pay?" con tamaño 18 y color GRIS_5.
+
+Las etiquetas de las porciones deben tener el mismo color que las porciones y un tamaño de 12. Los porcentajes deben estar en color BLANCO, en negrita, y con un tamaño de 12.
+
+La propiedad del ancho de la rosquilla (wedgeprops) debe ser de 0.4, la posición de los porcentajes dentro de la porción (pctdistance) debe ser de 0.8, el ángulo de inicio debe ser de 180 (startangle) y no debe haber explosión de porciones.
+
+Usa las bibliotecas de visualización de datos de Python para crear esta visualización.
+
+Utilizando la respuesta de ChatGPT, obtenemos el siguiente código:
+
+import matplotlib.pyplot as plt
+
+# Contabiliza la cantidad de usuarios que realizaron el prerregistro en Zoop Pay
+pre_registro_counts = df['zoop_pay'].value_counts()
+
+# Define los colores para cada valor
+colors = [AZUL_3 if label == 'Sí' else GRIS_3 for label in pre_registro_counts.index]
+
+# Crea el gráfico de rosquilla
+plt.figure(figsize=(6, 6), facecolor=GRIS_1)
+plt.gca().set_facecolor(GRIS_1)  # Cambia el color del fondo del gráfico
+patches, texts, autotexts = plt.pie(pre_registro_counts, labels=pre_registro_counts.index, autopct='%1.1f%%', startangle=180, colors=colors, wedgeprops=dict(width=0.4), pctdistance=0.8)
+
+# Añade el título con el color y tamaño especificados
+plt.title('¿Pre-registrado(a) en Zoop Pay?', color=GRIS_5, fontsize=18)
+
+# Configura los colores y tamaños de las etiquetas de las porciones y porcentajes
+for text, autotext, color in zip(texts, autotexts, [GRIS_3, AZUL_3]):
+    text.set_color(color)  # Define el color de la etiqueta de la porción igual al color de la porción
+    text.set_fontsize(12)
+    autotext.set_color(BLANCO)  # Define el color de los porcentajes como blanco
+    autotext.set_weight('bold')  # Define los porcentajes en negrita
+    autotext.set_fontsize(12)
+# Muestra el gráfico
+plt.show()
+Copia el código
+Salida:
+
+26.png
+
+Si tienes alguna duda, puedes usar el foro o el Discord de Alura.
+
+******************************************************+
+12
+Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Identificar la importancia de los colores en la visualización de datos.
+Reconocer la importancia de la percepción humana en el uso de los colores, accesibilidad, estética visual y el destaque de información en los visuales generados por las IAs generativas.
+Escribir prompts para describir cada técnica de narración de datos (storytelling).
+Optimizar prompts para generar mejores resultados con la herramienta de ChatGPT.
+Con la asistencia de ChatGPT conseguimos:
+
+Personalizar los elementos visuales de un gráfico: título, ejes, rótulos y paleta de colores.
+Personalizar los elementos visuales de los gráficos destacándolos a través de colores y uso de textos informativos.
+Añadir puntos de interés al gráfico para hacer comparaciones con los datos visualizados.
+Refinar los gráficos ya desarrollados a través del código generado por ChatGPT.
+********************************************************+
+*******************************************************
+05.Construyendo el proyecto
+01
+Proyecto del aula anterior
+ Siguiente pregunta
+
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en Github o haga clic aquí para descargarlos directamente.
+**************************************************************************+
+02
+Generando funciones para los gráficos
+¡Hola! En esta clase, el enfoque principal es la finalización del proyecto mediante la optimización y organización del código para la generación de gráficos. Aquí tienes un resumen de los puntos clave:
+
+Creación de Funciones para Gráficos:
+
+Se encapsulan los códigos de los gráficos en funciones (metodo_pago, ventas_mensuales, facturacion_por_categoria) para facilitar la exportación y reutilización.
+Se utiliza return plt en cada función para devolver el objeto gráfico y permitir su visualización con .show().
+Mejora de Gráficos con Instrucciones Detalladas:
+
+Se utiliza un prompt detallado para modificar el gráfico de facturación por categoría de producto, incluyendo especificaciones de identidad visual, colores, etiquetas y texto explicativo.
+Se destaca la importancia de proporcionar el código original del gráfico al modelo para obtener resultados más precisos y consistentes.
+Automatización y Aprendizaje del Modelo:
+
+Se observa que, con la secuencia de instrucciones, el modelo aprende patrones y genera código de manera más autónoma, lo que facilita la creación de visualizaciones complejas.
+¿Hay algo en particular sobre lo que te gustaría profundizar o tienes alguna pregunta adicional?
+
+Copiar texto de Luri al portapapeles
+***************************************************************
+03 Buenas prácticas para el refinamiento de visualizaciones
